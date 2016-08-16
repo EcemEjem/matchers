@@ -1,10 +1,10 @@
 class JobOffer < ApplicationRecord
-  belongs_to :companies
+  belongs_to :company
   
   has_many :job_applications
   has_many :employees, through: :job_applications
 
-  validate :name, presence: true
-  validate :city, presence: true
-  validate :date, presence: true
+  validates :name, presence: true
+  validates :city, presence: true
+  validates :date, presence: true
 end

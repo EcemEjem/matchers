@@ -1,6 +1,6 @@
 class JobApplication < ApplicationRecord
-  belongs_to :employees
-  belongs_to :job_offers
+  belongs_to :employee
+  belongs_to :job_offer
 
-  validate :status, presence: true
+  validates :status, presence: true
 end
