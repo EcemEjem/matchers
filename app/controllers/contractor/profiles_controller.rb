@@ -1,25 +1,27 @@
-class ProfilesController < ApplicationController
-  before_action = set_profile, only: [:edit, :update]
+class Contractor::ProfilesController < ApplicationController
+  before_action :authenticate_employee!
+  before_action :set_profile
 
   def edit
-    @profile = Profile.find(profile_params[:id])
   end
 
   def update
-    @profile = Profile.find(set_profile)
-    @profile.update(profile_params)
-    redirect_to profile_path(@profile)
-
+    if @profile.update(profile_params)
+      redirect_to edit_contractor_profile_path
+    else
+      flash[:alert] = "Fill all the required fields"
+      render :edit
+    end
   end
 
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :age, :gender, :location, :availability)
+    params.require(:employee).permit(:first_name, :last_name, :age, :gender, :location, :availability)
   end
 
   def set_profile
-    @profile = Profile.find(profile_params[:id])
+    @profile = current_employee
   end
 
 end
