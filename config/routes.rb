@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'job_applications/new'
-
-  get 'job_applications/create'
-
   devise_for :companies
   devise_for :employees
   root to: 'pages#home'
