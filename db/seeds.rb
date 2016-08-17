@@ -9,7 +9,8 @@ Company.destroy_all
 JobOffer.destroy_all
 
 puts "Create company"
-company = Company.create(
+company = Company.create!(
+  password: "google_is_awesome"
   name: "Google",
   industry: "Tech",
   email: "info@google.com",
