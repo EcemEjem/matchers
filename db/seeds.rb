@@ -5,16 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Create company"
 company = Company.create(
   name: "Google",
   industry: "Tech",
   email: "info@google.com",
   description:"Just the best")
 
+puts "Create job application"
+
+
 job_offers = JobOffer.create!([
-  { name: 'Sales Associate', city: 'Las Vegas', date: 2017, company_id: company.id },
-  { name: 'Sales Associate', city: 'Luxembourg', date: 2016, company_id: company.id },
-  { name: 'Sales Manager', city: 'San Francisco', date: 2017, company_id: company.id},
-  { name: 'Trade show booth builder', city: 'Istanbul', date: 2016, company_id: company.id },
-  { name: 'Electrician', city: 'Brussels', date: 2017, company_id: company.id },
+  { name: 'Sales Associate', city: 'Las Vegas', date: 2017, company_id: 1 },
+  { name: 'Sales Associate', city: 'Luxembourg', date: 2016, company_id: 1 },
+  { name: 'Sales Manager', city: 'San Francisco', date: 2017, company_id: 1},
+  { name: 'Trade show booth builder', city: 'Istanbul', date: 2016, company_id: 1 },
+  { name: 'Electrician', city: 'Brussels', date: 2017, company_id: 1 },
   ])
