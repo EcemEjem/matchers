@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817131921) do
+ActiveRecord::Schema.define(version: 20160818123303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 20160817131921) do
     t.string   "city"
     t.integer  "date"
     t.integer  "company_id"
+    t.string   "address"
+    t.integer  "wage"
     t.index ["company_id"], name: "index_job_offers_on_company_id", using: :btree
   end
 
