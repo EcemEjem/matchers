@@ -1,5 +1,5 @@
 class Company < ApplicationRecord
-    has_many :job_offers
+    has_many :job_offers, dependent: :destroy
     has_many :job_applications, through: :job_offers
 
     validates :name,         presence: true

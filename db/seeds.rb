@@ -3,7 +3,8 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#
+# movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Company.destroy_all
 JobOffer.destroy_all
@@ -22,7 +23,7 @@ company = Company.create!(
   name: "Swarovski",
   industry: "Fashion",
   email: "info@swarovski.com",
-  description:"Classic")
+  description:"Classic.")
 
 company = Company.create!(
   password: "swarovski_is_crazy",
@@ -72,6 +73,7 @@ job = JobOffer.create!(
   company_id: company.id)
 
 job = JobOffer.create!(
+
   name: 'Sales Associate - Shot Show',
   city: 'Las Vegas',
   date: 'January 17 - 20, 2017',
