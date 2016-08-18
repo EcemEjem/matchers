@@ -73,34 +73,35 @@ job = JobOffer.create!(
   company_id: company.id)
 
 job = JobOffer.create!(
-name: 'Sales Associate - Shot Show',
-city: 'Las Vegas',
-date: 'January 17 - 20, 2017',
-address: 'Sands Expo Center Las Vegas, The Grand Canal Shoppes, 201 Sands Ave, Las Vegas, NV 89169',
-wage: 15,
-company_id: company.id)
+
+  name: 'Sales Associate - Shot Show',
+  city: 'Las Vegas',
+  date: 'January 17 - 20, 2017',
+  address: 'Sands Expo Center Las Vegas, The Grand Canal Shoppes, 201 Sands Ave, Las Vegas, NV 89169',
+  wage: 15,
+  company_id: company.id)
 
 job = JobOffer.create!(
-name: 'Marketing Associate - AIRTEC - International Aerospace Supply Fair',
-city: 'Frankfurt',
-date: 'October 25 - 27, 2016',
-address: 'Frankfurt Exhibition Center, Ludwig-Erhard-Anlage 1 60327 Frankfurt a. M.',
-wage: 13,
-company_id: company.id)
+  name: 'Marketing Associate - AIRTEC - International Aerospace Supply Fair',
+  city: 'Frankfurt',
+  date: 'October 25 - 27, 2016',
+  address: 'Frankfurt Exhibition Center, Ludwig-Erhard-Anlage 1 60327 Frankfurt a. M.',
+  wage: 13,
+  company_id: company.id)
 
 job = JobOffer.create!(
-name: 'Sales Representative - Musikmesse Frankfurt',
-city: 'Frankfurt',
-date: 'April 5-8, 2017',
-address: 'Frankfurt Exhibition Center, Ludwig-Erhard-Anlage 1 60327 Frankfurt a. M., Germany',
-wage: 13,
-company_id: company.id)
+  name: 'Sales Representative - Musikmesse Frankfurt',
+  city: 'Frankfurt',
+  date: 'April 5-8, 2017',
+  address: 'Frankfurt Exhibition Center, Ludwig-Erhard-Anlage 1 60327 Frankfurt a. M., Germany',
+  wage: 13,
+  company_id: company.id)
 
 job = JobOffer.create!(
-name: 'Translator - The 20th China (Shanghai) International Nutrition and Health Industry Expo',
-city: 'Shanghai',
-date: 'September 17-19, 2016',
-address: 'Shanghai New International Expo Centre (SNIEC), 2345 Long Yang Road, Pudong Area, Shanghai, 201204, China',
-wage: 30,
-company_id: company.id)
+  name: 'Translator - The 20th China (Shanghai) International Nutrition and Health Industry Expo',
+  city: 'Shanghai',
+  date: 'September 17-19, 2016',
+  address: 'Shanghai New International Expo Centre (SNIEC), 2345 Long Yang Road, Pudong Area, Shanghai, 201204, China',
+  wage: 30,
+  company_id: company.id)
 
