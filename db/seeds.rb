@@ -103,3 +103,4 @@ date: 'September 17-19, 2016',
 address: 'Shanghai New International Expo Centre (SNIEC), 2345 Long Yang Road, Pudong Area, Shanghai, 201204, China',
 wage: 30,
 company_id: company.id)
+
