@@ -1,7 +1,11 @@
 class Contractor::JobsController < ApplicationController
   #list all the job offer
   def index
-    @jobs = JobOffer.all
+    if params[:location] != ""
+      @jobs = JobOffer.where(city: params[:location])
+    else
+      @jobs = JobOffer.all
+    end
   end
 
   def show

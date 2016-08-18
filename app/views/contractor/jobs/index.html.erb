@@ -1,9 +1,29 @@
 <div class="jobs">
   <% @jobs.each do |job| %>
   <div class="job">
+    <%= link_to contractor_job_path(job) do %>
+    <div class="header-information">
+      <div class="avatar">
+      <img src="http://placehold.it/75/75" alt=""></div>
+      <div class="title">
+        <%= job.city %>
+      </div>
+      <% end %>
+      <div class="city">
+        <%= job.address %>
+      </div>
+    </div>
+    <div class="other-information">
+    <%= link_to contractor_job_path(job) do %>
     <p>
-      <%= link_to job.name, contractor_job_path(job) %>
+    <%= job.name %>
     </p>
+    <% end %>
+      <div class="wage">
+        Wage: <%= job.wage %> €
+      </div>
+        
+    </div>
   </div>
   <% end %>
 </div>
