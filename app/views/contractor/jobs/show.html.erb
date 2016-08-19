@@ -1,7 +1,7 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(233, 100, 67, 0.6) 40%, rgba(144, 78, 149, 0.6) 50%), url('http://p1.pichost.me/i/51/1749123.jpg?dl=1');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(233, 100, 67, 0.4) 40%, rgba(144, 78, 149, 0.4) 50%), url('<%= @job.photo.present? ? cl_image_path(@job.photo) : "https://unsplash.it/800/800/?random"; %>');">
   <div class="banner-content">
     <h2><%=@job.name%></h2>
-    <h2><%=@job.date%></h2>
+    <h2><%=@job.start_date%> - <%=@job.end_date%></h2>
     <a href="#" class="btn-success btn-lg">Apply now</a>
   </div>
 </div>
@@ -15,7 +15,7 @@
           <p>Job description:</p>
         </div> 
         <div class="col-md-9">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, ea, odio! Cumque, dolores. Perspiciatis odit culpa, ipsum perferendis quos est sint voluptates ullam, unde iusto possimus architecto quia nesciunt in.</p>
+          <p><%=@job.job_description%></p>
         </div>      
       </div>
       <hr>
@@ -47,9 +47,3 @@
     </div>
   </div>
 </div>
-
-
-<!-- <h2><%= @job.name %></h2>
-<h2><%= @job.city %></h2>
-<h2><%= @job.date %></h2>
- -->

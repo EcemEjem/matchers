@@ -6,5 +6,4 @@ class JobOffer < ApplicationRecord
 
   validates :name, presence: true
   validates :city, presence: true
-  validates :date, presence: true
 end
