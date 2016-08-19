@@ -3,10 +3,10 @@ class Contractor::JobsController < ApplicationController
   def index
     @a = 1
     # raise
-    if params[:location] != ""
-      @jobs = JobOffer.where(city: params[:location])
-    else
-      @jobs = JobOffer.all
+    @jobs = JobOffer.all
+
+    if params[:location].present?
+      @jobs = @jobs.where(city: params[:location])
     end
   end
 

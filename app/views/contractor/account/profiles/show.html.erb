@@ -12,10 +12,10 @@
       <p><%= current_employee.gender %></p>
 
       <div class="actions">
-        <%= link_to contractor_account_profile_path(current_employee), method: :delete do %>
-        <i class="fa fa-trash-o fa-2x"></i>
-        <% end %>
-        <%= link_to edit_contractor_account_profile_path(current_employee) do %>
+        <%#= link_to contractor_account_profile_path, method: :delete do %>
+        <!-- <i class="fa fa-trash-o fa-2x"></i> -->
+        <%# end %>
+        <%= link_to edit_contractor_account_profile_path do %>
         <i class="fa fa-edit fa-2x"></i>
         <% end %>
       </div>
