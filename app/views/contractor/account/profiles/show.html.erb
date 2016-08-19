@@ -1,0 +1,52 @@
+<div class="profile-wrapper">
+  <div class="profile-information">
+    <div class="profile-image">
+      <%= image_tag "http://placehold.it/200/200" %>
+    </div>
+    <div class="profile-content">
+      <span><%= current_employee.first_name %> <%= current_employee.last_name %></span>
+      <div class="profile-location">
+        <%= current_employee.location %>
+      </div>
+      <p><%= current_employee.age %></p>
+      <p><%= current_employee.gender %></p>
+
+      <div class="actions">
+        <%= link_to contractor_account_profile_path(current_employee), method: :delete do %>
+        <i class="fa fa-trash-o fa-2x"></i>
+        <% end %>
+        <%= link_to edit_contractor_account_profile_path(current_employee) do %>
+        <i class="fa fa-edit fa-2x"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- THERE SHOULD BE SOMETHING ABOUT A DATE HERE?????? -->
+    <!-- <div class="profile-extra-information">
+      <div class="profile-availability">
+        <%= current_employee.availability %>
+      </div>
+    </div> -->
+    <!-- UNTIL HERE?????? -->
+    <div class="job-applications">
+      <% current_employee.job_applications.each do |job_application| %>
+      <div class="job-application">
+        <% if job_application.status == "declined" %>
+        <i class="fa fa-times fa-2x red"></i>
+        <% elsif job_application.status == "accepted" %>
+        <i class="fa fa-check fa-2x green"></i>
+        <% else %>
+        <i class="fa fa-clock-o fa-2x"></i>
+        <% end %>
+        <div class="job-information">
+        <div class="company-name">
+        <%= job_application.job_offer.company.name %>
+        </div>
+        <div class="job-name">
+           <%= job_application.job_offer.name %>
+        </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
