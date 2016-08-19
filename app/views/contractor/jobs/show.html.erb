@@ -1,7 +1,7 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(233, 100, 67, 0.6) 40%, rgba(144, 78, 149, 0.6) 50%), url('http://p1.pichost.me/i/51/1749123.jpg?dl=1');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(233, 100, 67, 0.4) 40%, rgba(144, 78, 149, 0.4) 50%), url('http://p1.pichost.me/i/51/1749123.jpg?dl=1');">
   <div class="banner-content">
     <h2><%=@job.name%></h2>
-    <h2><%=@job.date%></h2>
+    <h2><%=@job.start_date%> - <%=@job.end_date%></h2>
     <a href="#" class="btn-success btn-lg">Apply now</a>
   </div>
 </div>
@@ -47,9 +47,3 @@
     </div>
   </div>
 </div>
-
-
-<!-- <h2><%= @job.name %></h2>
-<h2><%= @job.city %></h2>
-<h2><%= @job.date %></h2>
- -->
