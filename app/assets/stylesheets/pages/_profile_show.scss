@@ -1,0 +1,114 @@
+.profile {
+  background-color: #F1ECEC;
+  padding: 20px;
+  border-radius: 2pt;
+  margin: 20px auto;
+  width: 600px;
+}
+
+.profile {
+  display: flex;
+  margin-bottom: 50px;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+  .header-information {
+    font-size: 10px;
+  }
+}
+.first_name {
+  float: left;
+}
+.title {
+  margin: 10px 0;
+}
+
+.city {
+  font-weight: 700;
+  width: 140px;
+}
+
+.other-information {
+  width: 250px;
+  margin-left: auto;
+}
+
+// first_name %></h2>
+// <h2><%= @profile.last_name %></h2>
+// <h2><%= @profile.age %></h2>
+// <h2><%= @profile.gender %></h2>
+// <h2><%= @profile.location %></h2>
+// <h2><%= @profile.availability %></h2>
+//
+.profile-wrapper {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: #FCCA44;
+  min-height: 70vh;
+  padding-bottom: 20px;
+}
+
+.profile-information {
+  display: flex;
+  align-items: center;
+}
+
+.profile-content {
+  margin: 0 auto;
+  span {
+    font-size: 27px;
+    font-weight: 700;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100px;
+  i {
+    color: white;
+    height: 40px;
+    transform: scale(1);
+    &:hover {
+      transition: 200ms ease;
+      color: white;
+      transform: scale(1.04);
+    }
+  }
+}
+
+.job-application {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  margin-top: 20px;
+  border-bottom: 2px dotted white;
+  margin-left: 20px;
+  margin-right: 20px;
+i {
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+}
+
+.job-information {
+  margin-left: 10px;
+  .company-name {
+    font-weight: 700;
+  }
+  .job-name {
+    font-size: 11px;
+  }
+}
+
+.red {
+  color: red !important;
+}
+
+.green {
+  color: green !important;
+}
