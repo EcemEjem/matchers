@@ -1,13 +1,17 @@
-class Contractor::ProfilesController < ApplicationController
+class Contractor::Account::ProfilesController < ApplicationController
   before_action :authenticate_employee!
   before_action :set_profile
+
+  def show
+    @job_applications = current_employee.job_applications
+  end
 
   def edit
   end
 
   def update
     if @profile.update(profile_params)
-      redirect_to edit_contractor_profile_path
+      redirect_to edit_contractor_account_profile_path
     else
       flash[:alert] = "Fill all the required fields"
       render :edit
