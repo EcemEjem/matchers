@@ -1,0 +1,55 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 50vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */ 
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h2 {
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper-grey {
+  background: #EDEFF0;
+}
+
+
+.box p {
+  text-align: justify;
+}
+
+.box2 {
+  background: white;
+  padding: 15px;
+  box-shadow: 1px 1px 2px #e7e7e7;
+  border-radius: 4px;
+  margin: 10px 10px;
+}
+
+// .btn-lg {
+//   position: absolute;
+// }
+
+.btn2 {
+  position: relative;
+  float: right;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+// .user-house {
+//     color: white;
+//     font-size: 30px;
+//     position: absolute;
+//     bottom: 15px;
+//     left: 10px;
+// .banner p {
+//   font-size: 20px;
+//   font-weight: lighter;
+//   color: rgba(255, 255, 255, 0.7);
+//   margin-bottom: 20px;
+// }
