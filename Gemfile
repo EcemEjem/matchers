@@ -7,7 +7,7 @@ gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
-gem 'geocoder'
+gem "geocoder"
 
 gem 'sass-rails'
 gem 'jquery-rails'

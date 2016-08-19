@@ -1,3 +1,55 @@
-<h2><%= @job.name %></h2>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(233, 100, 67, 0.6) 40%, rgba(144, 78, 149, 0.6) 50%), url('http://p1.pichost.me/i/51/1749123.jpg?dl=1');">
+  <div class="banner-content">
+    <h2><%=@job.name%></h2>
+    <h2><%=@job.date%></h2>
+    <a href="#" class="btn-success btn-lg">Apply now</a>
+  </div>
+</div>
+
+<div class="wrapper-grey">
+  <div class="container">
+    <div class="row">
+    <div class="col-md-7 box2">
+      <div class="row">
+        <div class="col-md-3">
+          <p>Job description:</p>
+        </div> 
+        <div class="col-md-9">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, ea, odio! Cumque, dolores. Perspiciatis odit culpa, ipsum perferendis quos est sint voluptates ullam, unde iusto possimus architecto quia nesciunt in.</p>
+        </div>      
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <p>Sales associates:</p>
+        </div> 
+        <div class="col-md-9">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, ea, odio! Cumque, dolores. Perspiciatis odit culpa, ipsum perferendis quos est sint voluptates ullam, unde iusto possimus architecto quia nesciunt in.</p>
+        </div>      
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <p>Fashion industry:</p>
+        </div> 
+        <div class="col-md-9">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, ea, odio! Cumque, dolores. Perspiciatis odit culpa, ipsum perferendis quos est sint voluptates ullam, unde iusto possimus architecto quia nesciunt in.</p>
+        </div>      
+      </div>
+      <hr>
+      <div class="row">
+        <a href="#" class="btn-success btn-lg btn2">Apply now</a> 
+      </div>
+    </div>
+    <div class="col-md-3 col-md-offset-1 box2">
+      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{@job.address}&key=#{ENV['GOOGLE_KEY']}" %>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <h2><%= @job.name %></h2>
 <h2><%= @job.city %></h2>
 <h2><%= @job.date %></h2>
+ -->
