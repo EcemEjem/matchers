@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/components/card.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/components/button.css">
-    <script src="js/modernizr.js"></script> <!-- Modernizr -->
     <title>Matchers</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -15,6 +14,10 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= yield %>
+
+    <% if controller_name != "pages" && action_name != "home" %>
+      <%= render 'shared/footer' %>
+    <% end %>
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
