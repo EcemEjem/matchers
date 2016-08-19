@@ -1,14 +1,24 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <%= simple_form_for @job_application, url: contractor_job_job_applications_path(@job_offer) do |f| %>
-      <div class="letter">
-        <%= f.input :motivation_letter %>
-        <%= f.submit 'create' %>
-      </div>     
-      <% end %>
-
+<div class="wrapper">
+  <div class="container">
+    <h1 class="header">Apply to this job offer</h1>
+  </div>
+  <div class="box effect1">
+    <div class="job-offer-details">
+      <h3>Title: <%= @job_offer.name %></h3>
+    </div>
+    <div class="job-offer-details">
+      <p><strong>Date:</strong> <%= @job_offer.date %></p>
+      <p><strong>Wage:</strong> <%= @job_offer.wage %> Euro</p>
+      <p><strong>City:</strong> <%= @job_offer.city %></p>
+      <p><strong>Address:</strong> <%= @job_offer.address %></p>
     </div>
   </div>
+  <div class="box effect2">
+  <%= simple_form_for @job_application, url: contractor_job_job_applications_path(@job_offer) do |f| %>
+    <div class="letter">
+      <%= f.input :motivation_letter %>
+      <%= f.submit 'Apply'  %>
+    </div>     
+  <% end %>
+ </div>
 </div>
-
