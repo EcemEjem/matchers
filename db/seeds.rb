@@ -16,42 +16,48 @@ company = Company.create!(
   name: "Avancé Accessories",
   industry: "Fashion",
   email: "info@avanceaccessories.com",
-  description:"Unique designs, hand-crafted silver jewelry.")
+  description:"Unique designs, hand-crafted silver jewelry."
+)
 
 company = Company.create!(
   password: "swarovki_sparkles",
   name: "Swarovski",
   industry: "Fashion",
   email: "info@swarovski.com",
-  description:"Classic.")
+  description:"Classic"
+)
 
 company = Company.create!(
-  password: "swarovski_is_crazy",
+  password: "remingtonoutdoor_is_crazy",
   name: "Remington Outdoor",
   industry: "Arms",
   email: "info@remington.com",
-  description:"Shots shots!")
+  description:"Shots shots!"
+)
 
 company = Company.create!(
   password: "airbus_is_great",
   name: "Airbus Defence and Space",
   industry: "Aeronautics-Space",
   email: "info@airbus.com",
-  description:"Space out and expand!")
+  description:"Space out and expand!"
+)
 
 company = Company.create!(
-  password: "sony_is_great",
+  password: "samick_is_great",
   name: "Samick Pianos",
   industry: "Musical Instruments and Equipment",
   email: "info@sony.com",
-  description:"It's a Samick.")
+  description:"It's a Samick."
+)
 
 company = Company.create!(
   password: "amoy_is_great",
   name: "Amoy Foods - Taohua Daton",
   industry: "Food and Nutrition",
   email: "info@amoy.com",
-  description:"Eat eat!")
+  description:"Eat eat!"
+)
 
 puts "Create job application"
 
@@ -61,7 +67,8 @@ job = JobOffer.create!(
   date: 'September 15 - 19, 2016',
   address: 'Hong Kong Convention and Exhibition Centre, 1 Expo Drive, Wan Chai, Hong Kong',
   wage: 20,
-  company_id: company.id)
+  company_id: company.id
+)
 
 job = JobOffer.create!(
 
@@ -70,7 +77,8 @@ job = JobOffer.create!(
   date: 'January 26 - February 6, 2017',
   address: 'Tucson Expo Center - 3750 E Irvington Rd, Tucson, Arizona 85714',
   wage: 25,
-  company_id: company.id)
+  company_id: company.id
+)
 
 job = JobOffer.create!(
 
@@ -79,7 +87,8 @@ job = JobOffer.create!(
   date: 'January 17 - 20, 2017',
   address: 'Sands Expo Center Las Vegas, The Grand Canal Shoppes, 201 Sands Ave, Las Vegas, NV 89169',
   wage: 15,
-  company_id: company.id)
+  company_id: company.id
+)
 
 job = JobOffer.create!(
   name: 'Marketing Associate - AIRTEC - International Aerospace Supply Fair',
@@ -87,7 +96,8 @@ job = JobOffer.create!(
   date: 'October 25 - 27, 2016',
   address: 'Frankfurt Exhibition Center, Ludwig-Erhard-Anlage 1 60327 Frankfurt a. M.',
   wage: 13,
-  company_id: company.id)
+  company_id: company.id
+)
 
 job = JobOffer.create!(
   name: 'Sales Representative - Musikmesse Frankfurt',
@@ -95,7 +105,8 @@ job = JobOffer.create!(
   date: 'April 5-8, 2017',
   address: 'Frankfurt Exhibition Center, Ludwig-Erhard-Anlage 1 60327 Frankfurt a. M., Germany',
   wage: 13,
-  company_id: company.id)
+  company_id: company.id
+)
 
 job = JobOffer.create!(
   name: 'Translator - The 20th China (Shanghai) International Nutrition and Health Industry Expo',
@@ -103,5 +114,6 @@ job = JobOffer.create!(
   date: 'September 17-19, 2016',
   address: 'Shanghai New International Expo Centre (SNIEC), 2345 Long Yang Road, Pudong Area, Shanghai, 201204, China',
   wage: 30,
-  company_id: company.id)
+  company_id: company.id
+)
 
