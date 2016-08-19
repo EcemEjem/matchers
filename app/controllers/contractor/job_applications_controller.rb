@@ -1,4 +1,5 @@
 class Contractor::JobApplicationsController < ApplicationController
+  before_action :authenticate_employee!
   before_action :set_job_offer
 
   def new
@@ -11,8 +12,9 @@ class Contractor::JobApplicationsController < ApplicationController
     @job_application.job_offer = @job_offer
     @job_application.status = "Pending"
     # We set manually the status of the app, we don't want empl. to set it again.
+
     if @job_application.save
-      redirect_to job_application_path(job_application)
+      redirect_to contractor_account_profile_path
     else
       render 'new'
     end

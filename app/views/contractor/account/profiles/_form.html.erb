@@ -1,10 +1,9 @@
 <%= simple_form_for @profile, url: contractor_account_profile_path do |f| %>
-       
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :age %>
   <%= f.input :gender %>
   <%= f.input :location %>
   <%= f.input :availability %>
-  <%= f.submit 'create' %>
+  <%= f.submit 'Update' %>
 <% end %>

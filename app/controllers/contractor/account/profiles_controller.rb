@@ -11,7 +11,7 @@ class Contractor::Account::ProfilesController < ApplicationController
 
   def update
     if @profile.update(profile_params)
-      redirect_to edit_contractor_account_profile_path
+      redirect_to contractor_account_profile_path
     else
       flash[:alert] = "Fill all the required fields"
       render :edit
