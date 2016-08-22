@@ -1,0 +1,76 @@
+.header {
+  text-align: center;
+  color: white;
+  font-size: 65px;
+}
+.job-offer-details {
+  margin-top: 30px;
+  margin-left: 20px;
+  padding-top: 10px;
+}
+
+.letter {
+  width: 600px;
+  margin: 20px;
+  padding-top: 30px;
+}
+//----------------------------------------------------//
+
+.wrapper {
+  background:lightblue;
+  padding-bottom: 100px;
+}
+
+.box {
+  width:60%;
+  height:300px;
+  background:#FFF;
+  margin:40px auto;
+}
+/*==================================================
+ * Effect 1
+ * ===============================================*/
+.effect1{
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+     -moz-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
+}
+
+/*==================================================
+ * Effect 2
+ * ===============================================*/
+.effect2
+{
+  position: relative;
+}
+.effect2:before, .effect2:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.effect2:after
+{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
