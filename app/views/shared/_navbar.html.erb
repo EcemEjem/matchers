@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
@@ -48,7 +49,55 @@
         <li><a href="#">Some mobile link</a></li>
         <li><a href="#">Other one</a></li>
         <li><a href="#">Other one</a></li>
+=======
+<nav class='navbar navbar-inverse navbar-fixed-top navbar-expanded'>
+  <div class='container header-container'>
+    <div class='navbar-header'>
+      <button class='navbar-toggle' data-target='#bs-example-navbar-collapse-1' data-toggle='collapse' type='button'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <!-- Logo -->
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <% "MaTcHeRs" %>
+      <% end %>
+    </div>
+    <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+      <ul class='nav navbar-nav navbar-right'>
+        <li class='hidden'>
+          <a class="page-scroll" href="">About Us</a>
+        </li>
+        <li>
+          <a class="page-scroll" id="overview-link" href="#overview">B2B Companies</a>
+        </li>
+        <li>
+          <%= link_to "Employee",contractor_root_path %>
+        </li>
+        <li>
+          <%= link_to  new_employee_registration_path do %>
+            <%= t(".sign_up", default: "Log up") %>
+          <% end %>
+        </li>
+        <% if employee_signed_in? %>
+          <li>
+            <%= link_to edit_contractor_account_profile_path do  %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_employee_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i><%= t(".sign_out", default: "Log out") %>
+            <% end %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to t(".sign_in", default: "Login"), new_employee_session_path %>
+          </li>
+        <% end %>
+>>>>>>> Stashed changes
       </ul>
     </div>
   </div>
-</div>
+</nav>
