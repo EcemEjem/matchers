@@ -41,9 +41,24 @@
         <%= link_to "Apply now", new_contractor_job_job_application_path(@job), class: "btn-success btn-lg btn2" %>
       </div>
     </div>
-    <div class="col-md-3 col-md-offset-1 box2">
-      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{@job.address}&key=#{ENV['GOOGLE_KEY']}" %>
+    <div id="map" style="width: 400px; height: 650px;" class="col-md-3 col-md-offset-1 box2">
     </div>
     </div>
   </div>
 </div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'map' } }, function() {
+    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    if (markers.length == 0) {
+      handler.getMap().setZoom(2);
+    } else if (markers.length == 1) {
+      handler.getMap().setZoom(14);
+    }
+    });
+  <% end %>
+<% end %>
