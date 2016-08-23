@@ -1,5 +1,4 @@
 class Company::Account::JobsController < ApplicationController
-    before_action :authenticate_company!
     before_action :set_job_offer, only: [:show, :edit, :update, :destroy]
 
   def index
