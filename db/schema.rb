@@ -81,6 +81,8 @@ ActiveRecord::Schema.define(version: 20160822150414) do
     t.date     "start_date"
     t.date     "end_date"
     t.string   "photo"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "event"
     t.index ["company_id"], name: "index_job_offers_on_company_id", using: :btree
   end
