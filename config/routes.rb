@@ -40,4 +40,6 @@ Rails.application.routes.draw do
 
   # static pages
   get '/i-am-a-company', to: 'pages#company', as: :company_landing
+  # so we call on the Company method from Pages Controller.
+  # HTML'e baktiginda company.html.erb goreceksin same name as the method.
 end

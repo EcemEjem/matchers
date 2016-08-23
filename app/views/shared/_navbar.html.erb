@@ -21,11 +21,11 @@
           <a class="page-scroll" id="overview-link" href="#overview">B2B Companies</a>
         </li>
         <li>
-          <%= link_to "Employee",contractor_root_path %>
+          <%= link_to "Employees",contractor_root_path %>
         </li>
         <li>
           <%= link_to  new_employee_registration_path do %>
-            <%= t(".sign_up", default: "Log up") %>
+            <%= t(".sign_up", default: "Sign up") %>
           <% end %>
         </li>
         <% if employee_signed_in? %>
