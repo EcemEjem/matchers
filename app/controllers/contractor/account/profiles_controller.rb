@@ -1,5 +1,4 @@
-class Contractor::Account::ProfilesController < ApplicationController
-  before_action :authenticate_employee!
+class Contractor::Account::ProfilesController < Contractor::BaseController
   before_action :set_profile
 
   def show
@@ -21,7 +20,7 @@ class Contractor::Account::ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:employee).permit(:first_name, :last_name, :age, :gender, :location, :availability)
+    params.require(:employee).permit(:first_name, :last_name, :age, :gender, :location, :availability, :photo, :photo_cache)
   end
 
   def set_profile

@@ -1,5 +1,4 @@
-class Company::Account::ProfilesController < ApplicationController
-  before_action :authenticate_company!
+class Company::Account::ProfilesController < Company::BaseController
   before_action :set_profile
 
   def show
