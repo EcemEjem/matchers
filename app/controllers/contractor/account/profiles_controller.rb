@@ -20,7 +20,7 @@ class Contractor::Account::ProfilesController < Contractor::BaseController
   private
 
   def profile_params
-    params.require(:employee).permit(:first_name, :last_name, :age, :gender, :location, :availability)
+    params.require(:employee).permit(:first_name, :last_name, :age, :gender, :location, :availability, :photo, :photo_cache)
   end
 
   def set_profile

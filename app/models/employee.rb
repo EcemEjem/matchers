@@ -1,4 +1,9 @@
 class Employee < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  mount_uploader :photo, PhotoUploader
+
   has_many :job_applications
   has_many :job_offers, through: :job_applications
 
@@ -9,6 +14,4 @@ class Employee < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
 end

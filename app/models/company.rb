@@ -4,6 +4,8 @@ class Company < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  mount_uploader :photo, PhotoUploader
+
   has_many :job_offers, dependent: :destroy
   has_many :job_applications, through: :job_offers
 

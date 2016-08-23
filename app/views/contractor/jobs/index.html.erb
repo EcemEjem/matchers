@@ -6,7 +6,7 @@
 
     <div class="header-information">
       <div class="avatar">
-       <%= image_tag "0#{@a}_company.jpg" %>
+       <%= cl_image_tag job.photo, height: 200, width: 200, crop: :fill %>
       </div>
       <div class="title">
         <%= job.city %>
@@ -23,6 +23,5 @@
     <p>Wage: <%= job.wage %> €</p>
     </div>
   </div>
-  <% @a = @a + 1 %>
   <% end %>
 </div>
