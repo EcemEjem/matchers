@@ -1,4 +1,6 @@
-class Contractor::JobsController < ApplicationController
+class Contractor::JobsController < Contractor::BaseController
+  skip_before_action :authenticate_employee!
+
   #list all the job offer
   def index
     @a = 1

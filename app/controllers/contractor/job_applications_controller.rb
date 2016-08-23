@@ -1,5 +1,4 @@
-class Contractor::JobApplicationsController < ApplicationController
-  before_action :authenticate_employee!
+class Contractor::JobApplicationsController < Contractor::BaseController
   before_action :set_job_offer
 
   def new

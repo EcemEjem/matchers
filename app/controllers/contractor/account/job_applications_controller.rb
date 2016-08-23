@@ -1,6 +1,4 @@
-class Contractor::Account::JobApplicationsController < ApplicationController
-  before_action :authenticate_employee!
-
+class Contractor::Account::JobApplicationsController < Contractor::BaseController
   def index
     @job_applications = current_employee.job_applications
   end

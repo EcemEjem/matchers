@@ -1,5 +1,4 @@
-class Contractor::Account::ProfilesController < ApplicationController
-  before_action :authenticate_employee!
+class Contractor::Account::ProfilesController < Contractor::BaseController
   before_action :set_profile
 
   def show
