@@ -1,27 +1,28 @@
+<div class="containert anchor">
+  <div class="jobs">
+    <% @jobs.each do |job| %>
+    <div class="job">
+      <%= link_to contractor_job_path(job) do %>
 
-<div class="jobs">
-  <% @jobs.each do |job| %>
-  <div class="job">
-    <%= link_to contractor_job_path(job) do %>
-
-    <div class="header-information">
-      <div class="avatar">
-       <%= cl_image_tag job.photo, height: 200, width: 200, crop: :fill %>
+      <div class="header-information">
+        <div class="avatar">
+         <%= cl_image_tag job.photo, height: 200, width: 200, crop: :fill %>
+        </div>
+        <div class="title">
+          <%= job.city %>
+        </div>
+        <% end %>
+        <div class="city">
+          <%= job.address %>
+        </div>
       </div>
-      <div class="title">
-        <%= job.city %>
-      </div>
+      <div class="other-information">
+      <%= link_to contractor_job_path(job) do %>
+        <%= job.name %>
       <% end %>
-      <div class="city">
-        <%= job.address %>
+      <p>Wage: <%= job.wage %> €</p>
       </div>
     </div>
-    <div class="other-information">
-    <%= link_to contractor_job_path(job) do %>
-      <%= job.name %>
     <% end %>
-    <p>Wage: <%= job.wage %> €</p>
-    </div>
   </div>
-  <% end %>
 </div>
