@@ -11,7 +11,7 @@ JobOffer.destroy_all
 
 puts "Create company"
 
-company = Company.create!(
+company_avance = Company.create!(
   password: "avance_is_awesome",
   name: "Avancé Accessories",
   industry: "Fashion",
@@ -19,7 +19,7 @@ company = Company.create!(
   description:"Unique designs, hand-crafted silver jewelry."
 )
 
-company = Company.create!(
+company_swarovski = Company.create!(
   password: "swarovki_sparkles",
   name: "Swarovski",
   industry: "Fashion",
@@ -27,7 +27,7 @@ company = Company.create!(
   description:"Classic"
 )
 
-company = Company.create!(
+company_remington = Company.create!(
   password: "remingtonoutdoor_is_crazy",
   name: "Remington Outdoor",
   industry: "Arms",
@@ -35,7 +35,7 @@ company = Company.create!(
   description:"Shots shots!"
 )
 
-company = Company.create!(
+company_airbus = Company.create!(
   password: "airbus_is_great",
   name: "Airbus Defence and Space",
   industry: "Aeronautics-Space",
@@ -43,7 +43,7 @@ company = Company.create!(
   description:"Space out and expand!"
 )
 
-company = Company.create!(
+company_samick = Company.create!(
   password: "samick_is_great",
   name: "Samick Pianos",
   industry: "Musical Instruments and Equipment",
@@ -51,7 +51,7 @@ company = Company.create!(
   description:"It's a Samick."
 )
 
-company = Company.create!(
+company_amoy = Company.create!(
   password: "amoy_is_great",
   name: "Amoy Foods - Taohua Daton",
   industry: "Food and Nutrition",
@@ -71,7 +71,7 @@ job = JobOffer.create!(
   address: 'Hong Kong Convention and Exhibition Centre, 1 Expo Drive, Wan Chai, Hong Kong',
   wage: 20,
   photo: "D3T_0061_hnijrt.jpg",
-  company_id: Company.first.id
+  company: company_avance
 )
 
 job = JobOffer.create!(
@@ -84,7 +84,7 @@ job = JobOffer.create!(
   address: 'Tucson Expo Center - 3750 E Irvington Rd, Tucson, Arizona 85714',
   wage: 25,
   photo: "Tucson-Gem-Jewelry-Show-Amber-Stone-Necklaces-Lot_z6s7ff.jpg",
-  company_id: Company.first.id
+  company: company_avance
 )
 
 job = JobOffer.create!(
@@ -97,7 +97,7 @@ job = JobOffer.create!(
   address: 'Sands Expo Center Las Vegas, The Grand Canal Shoppes, 201 Sands Ave, Las Vegas, NV 89169',
   wage: 15,
   photo: "gun-show_tkyjmu.jpg",
-  company_id: Company.first.id
+  company: company_avance
 )
 
 job = JobOffer.create!(
@@ -107,9 +107,9 @@ job = JobOffer.create!(
   end_date: Date.new(2017, 9, 17),
   job_description: 'Undertake a market analysis to include details on the market characteristics (market size and growth - dollars, units, prescriptions, days of therapy, patient types, market share development, number of competitors, market trends, market attractiveness); competitor characteristics (product characteristics, competitor marketing strategies, sales force activities, pricing analysis); prescriber characteristics (number of prescribers by specialty, physician prescription activity, desires and unmet needs).',
   address: 'Frankfurt Exhibition Center, Ludwig-Erhard-Anlage 1 60327 Frankfurt a. M.',
-  wage: 13, 
+  wage: 13,
   photo: "AMAugust16News-AIRTEC_syeskv.jpg",
-  company_id: Company.last.id
+  company: company_amoy
 )
 
 job = JobOffer.create!(
@@ -121,7 +121,7 @@ job = JobOffer.create!(
   address: 'Frankfurt Exhibition Center, Ludwig-Erhard-Anlage 1 60327 Frankfurt a. M., Germany',
   wage: 13,
   photo: "Musikmesse-Frankfurt-38_cwnsim.jpg",
-  company_id: Company.last.id
+  company: company_amoy
 )
 
 job = JobOffer.create!(
@@ -133,6 +133,6 @@ job = JobOffer.create!(
   address: 'Shanghai New International Expo Centre (SNIEC), 2345 Long Yang Road, Pudong Area, Shanghai, 201204, China',
   wage: 30,
   photo: "20150923081244893_akpgjw.jpg",
-  company_id: Company.last.id
+  company: company_amoy
 )
 
