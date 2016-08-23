@@ -4,7 +4,6 @@ class Company::Account::ProfilesController < Company::BaseController
   def show
     @job_offers = current_company.job_offers.order(created_at: :desc).limit(3)
     @job_applications = current_company.job_applications.order(created_at: :desc)
-
   end
 
   def edit
@@ -14,12 +13,9 @@ class Company::Account::ProfilesController < Company::BaseController
     if @profile.update(profile_params)
       redirect_to company_account_profile_path
     else
-      flash[:alert] = "Fill all the required fields"
+      flash[:alert] = "Please fill all the required fields."
       render :edit
     end
-  end
-
-  def delete
   end
 
   private
