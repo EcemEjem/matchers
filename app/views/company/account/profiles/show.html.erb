@@ -1,0 +1,27 @@
+<div class="container anchor">
+  <div class="row">
+    <div class="col-sx-12">
+      <h2>Wellcome <strong>"Name of company"</strong> to your company profile</h2>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <% @job_offers.each do |job_offer| %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url('<%= image_path '01_city.jpg' %>');">
+          <div class="title-card"><h2><%= job_offer.job_offers.name %></h2></div>
+          <div class="title-card"><h3><%= job_offer.job_offers.city %></h3></div>
+          <div class="card-description">
+            <h4><%= job_offer.job_applications.all %></h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="massive ui button">See all offers</button>
+    </div>
+  </div>
+</div>
