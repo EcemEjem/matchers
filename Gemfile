@@ -14,6 +14,7 @@ gem 'cloudinary', '1.1.0'
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
+gem 'omniauth-linkedin'
 
 gem 'sass-rails'
 gem 'jquery-rails'
