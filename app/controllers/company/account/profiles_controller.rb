@@ -25,7 +25,7 @@ class Company::Account::ProfilesController < Company::BaseController
   end
 
   def profile_params
-    params.require(:company).permit(:name, :industry, :description)
+    params.require(:company).permit(:name, :industry, :description, :photo, :photo_cache)
   end
 
 end

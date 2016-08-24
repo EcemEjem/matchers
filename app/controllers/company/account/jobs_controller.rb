@@ -17,15 +17,18 @@ class Company::Account::JobsController < ApplicationController
     @job.company = current_company
     @job.save
     redirect_to company_account_profile_path
-
   end
 
   def edit
   end
 
   def update
-    @job.update(job_params)
-    redirect_to company_account_profile_path
+     if @job.update(job_params)
+      redirect_to company_account_root_path
+    else
+      flash[:alert] = "Please fill all the required fields."
+      render :edit
+    end
   end
 
   def destroy
@@ -36,7 +39,7 @@ class Company::Account::JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job_offer).permit(:city, :event, :start_date, :end_date, :address, :wage, :job_description, :photo)
+    params.require(:job_offer).permit(:city, :event, :start_date, :end_date, :address, :wage, :job_description, :photo, :photo_cache)
   end
 
   def set_job_offer

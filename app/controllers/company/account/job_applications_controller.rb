@@ -1,7 +1,7 @@
 class Company::JobApplicationsController < ApplicationController
 
   def show
-    @job = Job.find(params[:id])
+    @job_application = Job.find(params[:id])
   end
 
   def accept
