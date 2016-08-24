@@ -1,4 +1,7 @@
 class Employee < ApplicationRecord
+  TEMP_EMAIL_PREFIX = 'change@me'
+  TEMP_EMAIL_REGEX = /\Achange@me/
+
   has_many :job_applications
   has_many :job_offers, through: :job_applications
 
@@ -7,50 +10,45 @@ class Employee < ApplicationRecord
   validates :gender,         presence: true, on: :update
   validates :age,            presence: true, on: :update
 
+  validates_format_of :email, without: TEMP_EMAIL_REGEX, on: :update
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-  devise :omniauthable, omniauth_providers: [:linkedin]
-  def self.find_for_oauth(auth, signed_in_resource = nil)
+         :recoverable, :rememberable, :trackable, :validatable, 
+         :omniauthable, omniauth_providers: [:linkedin]
 
-   # Get the identity and user if they exist
-   identity = Identity.find_for_oauth(auth)
+  def self.find_for_linkedin_oauth(auth)
+    email = auth.info.email
+    temporary_email = "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com"
 
-   # If a signed_in_resource is provided it always overrides the existing user
-   # to prevent the identity being locked with accidentally created accounts.
-   # Note that this may leave zombie accounts (with no associated identity) which
-   # can be cleaned up at a later date.
-   user = signed_in_resource ? signed_in_resource : identity.user
+    # Get the employee if it already exists based on linkedin token
+    employee = Employee.where(uid: auth.uid, provider: auth.provider).first
 
-   # Create the user if needed
-   if user.nil?
+    # Check if employee is already signed up with email only
+    employee ||= Employee.where(email: email).first
 
-     # Get the existing user by email if the provider gives us a verified email.
-     # If no verified email was provided we assign a temporary email and ask the
-     # user to verify it on the next step via UsersController.finish_signup
-     email_is_verified = auth.info.email && (auth.info.verified || auth.info.verified_email)
-     email = auth.info.email if email_is_verified
-     user = User.where(:email => email).first if email
+    # Instantiate a new employee if not found
+    employee ||= Employee.new(
+      email:    email.present? ? email : temporary_email,
+      password: Devise.friendly_token[0,20],
+      # Employee profile
+      first_name:         auth.info.first_name,
+      last_name:          auth.info.last_name,
+      linkedin_photo_url: auth.info.image,
+      location:           auth.info.location,
+      headline:           auth.info.headline
+    )
 
-     # Create the user if it's a new registration
-     if user.nil?
-       user = User.new(
-         #username: auth.info.nickname || auth.uid,
-         email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-         password: Devise.friendly_token[0,20]
-         #industry: 
-         # more things here from linkedin
-         )
-       user.save!
-     end
-   end
+    # Linkedin credentials
+    employee.uid      = auth.uid
+    employee.provider = auth.provider
 
-   # Associate the identity with the user if needed
-   if identity.user != user
-     identity.user = user
-     identity.save!
-   end
-   user
- end
+    employee.save
+    employee # important to always return employee instance
+  end
+
+  def email_verified?
+    self.email && self.email !~ TEMP_EMAIL_REGEX
+  end
 end
