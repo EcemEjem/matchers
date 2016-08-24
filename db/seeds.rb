@@ -63,7 +63,8 @@ company_amoy = Company.create!(
 puts "Create job offers..."
 
 job = JobOffer.create!(
-  name: 'Sales Associate - HKTDC Hong Kong International Jewelry Show',
+  name: 'Sales Associate',
+  event: 'HKTDC Hong Kong International Jewelry Show',
   city: 'Hong Kong',
   start_date: Date.new(2016, 5, 3),
   end_date: Date.new(2017, 9, 17),
@@ -77,7 +78,8 @@ job = JobOffer.create!(
 
 job = JobOffer.create!(
 
-  name: 'Electrician & Booth builder - Arizona Jogs Gem and Jewelry Show',
+  name: 'Electrician & Booth builder',
+  event: 'Arizona Jogs Gem and Jewelry Show',
   city: 'Tucson',
   start_date: Date.new(2016, 10, 3),
   end_date: Date.new(2017, 3, 10),
@@ -90,7 +92,8 @@ job = JobOffer.create!(
 
 job = JobOffer.create!(
 
-  name: 'Sales Associate - Shot Show',
+  name: 'Sales Associate',
+  event: 'Shot Show',
   city: 'Las Vegas',
   start_date: Date.new(2016, 5, 3),
   end_date: Date.new(2017, 9, 17),
@@ -102,7 +105,8 @@ job = JobOffer.create!(
 )
 
 job = JobOffer.create!(
-  name: 'Marketing Associate - AIRTEC - International Aerospace Supply Fair',
+  name: 'Marketing Associate',
+  event: 'AIRTEC - International Aerospace Supply Fair',
   city: 'Frankfurt',
   start_date: Date.new(2016, 5, 3),
   end_date: Date.new(2017, 9, 17),
@@ -114,7 +118,8 @@ job = JobOffer.create!(
 )
 
 job = JobOffer.create!(
-  name: 'Sales Representative - Musikmesse Frankfurt',
+  name: 'Sales Representative',
+  event: 'Musikmesse Frankfurt',
   city: 'Frankfurt',
   start_date: Date.new(2016, 5, 3),
   end_date: Date.new(2017, 9, 17),
@@ -126,7 +131,8 @@ job = JobOffer.create!(
 )
 
 job = JobOffer.create!(
-  name: 'Translator - The 20th China (Shanghai) International Nutrition and Health Industry Expo',
+  name: 'Translator',
+  event: 'The 20th China (Shanghai) International Nutrition and Health Industry Expo',
   city: 'Shanghai',
   start_date: Date.new(2016, 5, 3),
   end_date: Date.new(2017, 9, 17),

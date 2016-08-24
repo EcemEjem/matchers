@@ -1,3 +1,13 @@
+.green {
+  color: white !important;
+}
+.profile-title {
+  text-align: center;
+}
+.row {
+  display: flex;
+  justify-content:space-around;
+}
 .card {
   background-size: cover !important;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -7,6 +17,11 @@
   height: 250px;
   margin-bottom: 20px;
   }
+.title-name {
+  position: absolute;
+  top: 10px;
+  margin-left: 10px;
+}
 .title-card {
   position: absolute;
   top: 100px;
@@ -20,4 +35,30 @@
 }
 .card-description h2 {
   font-size: 22px;
+}
+
+.wrapper-white {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.wrapper-applications {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -155px;
+}
+
+.push {
+  height: 155px;
+}
+
+.card-account {
+  display: flex;
+  flex-direction: column;
+  background: #d4d4c7;
+  padding: 20px;
+  border-radius: 3pt;
+  margin: 20pt;
+  box-shadow: 1px 1px 1px rgba(1,1,1,0.5);
 }
