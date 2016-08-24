@@ -1,10 +1,27 @@
-<div class="banner-gradient-shadow">
-  <div class="container">
-    <div class="main-header text-center">
-      <h1>TADAAA VIEW for landing page /i-am-a-company </h1>
-      <div class="button text-center">
-          <%= link_to "Create my company profile",company_account_profile_path, class: "ui inverted button" %>
-        </div>
-    </div>
-  </div>
+
+<div class="main-header text-center">
+  <h1>MATCHERS</h1>
 </div>
+<div class="main-text text-center">
+  <div class="anything_but_bootstrap">
+  <p>
+    Find your short-term employees anywhere, anytime.
+    You are a B2B company.
+    You attend trade shows, conferences and temporary events all over the world.
+    You need local, short-term employees from sales personnel, translators to assistants to set up your booth and electricity.
+
+    Matchers provides you with immediate assistance.
+  </p>
+  </div>
+  <%= link_to company_account_profile_path do %>
+  <div class="button-company">
+    <p>
+      Find your <br>
+      employees now
+    </p>
+  </div>
+  <% end %>
+</div>
+
+
+<div class="banner-company"></div>

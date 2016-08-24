@@ -1,0 +1,24 @@
+.banner-company {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(-360deg, rgba(115, 13, 13, 0.62) 0%, rgba(154, 100, 106, 0.8) 50%), image-url('tradeshow.jpg');
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.anything_but_bootstrap {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.button-company {
+  width: 200px;
+  margin: 0 auto;
+  color: white;
+  background: brown;
+  padding: 10px;
+  border-radius: 2pt;
+}
