@@ -1,4 +1,7 @@
 class JobOffer < ApplicationRecord
+
+  mount_uploader :photo, PhotoUploader
+
   belongs_to :company
 
   has_many :job_applications, dependent: :destroy
@@ -9,4 +12,5 @@ class JobOffer < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+
 end

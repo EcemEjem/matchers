@@ -1,4 +1,4 @@
-class Contractor::CitiesController < ApplicationController
+class Contractor::CitiesController < Contractor::BaseController
   def index
   end
 end

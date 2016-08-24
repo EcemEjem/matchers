@@ -2,6 +2,11 @@ class Employee < ApplicationRecord
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  mount_uploader :photo, PhotoUploader
+
   has_many :job_applications
   has_many :job_offers, through: :job_applications
 
@@ -51,6 +56,7 @@ class Employee < ApplicationRecord
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
+
 end
 
 

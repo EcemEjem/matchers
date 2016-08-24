@@ -1,0 +1,54 @@
+<div class="container anchor">
+  <div class="row">
+    <div class="col-sx-12">
+      <h2>Welcome <strong>"Name of company"</strong> to your company profile</h2>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <% @job_offers.each do |job_offer| %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url('<%= job_offer.photo.present? ? cl_image_path(job_offer.photo, height: 200, width: 200, crop: :fill) : image_path('01_city.jpg') %>');">
+          <div class="title"><h4><%= job_offer.name %></h4></div>
+          <div class="title-card"><h3><%= job_offer.city %></h3></div>
+          <div class="card-description">
+            <h4><%= job_offer.job_applications.count %></h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="massive ui button">See all offers</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <% @job_applications.each do |job_application| %>
+        <div class="ui card">
+          <div class="image">
+            <%= image_tag 'profile.jpg' %>
+          </div>
+          <div class="content">
+            <a class="header"><%= job_application.employee.first_name %></a>
+            <a class="header"><%= job_application.job_offer.name %></a>
+            <div class="meta">
+              <span class="date">Joined in 2013</span>
+            </div>
+            <div class="description">
+              Kristy is an art director living in New York.
+            </div>
+          </div>
+          <div class="extra content">
+            <a>
+              <i class="user icon"></i>
+              22 Friends
+            </a>
+          </div>
+        </div>
+      <% end  %>
+    </div>
+  </div>
+</div>

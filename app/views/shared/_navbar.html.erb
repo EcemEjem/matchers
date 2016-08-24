@@ -14,18 +14,16 @@
     </div>
     <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
       <ul class='nav navbar-nav navbar-right'>
-        <li class='hidden'>
-          <a class="page-scroll" href="">About Us</a>
-        </li>
         <li>
           <a class="page-scroll" id="overview-link" href="#overview">B2B Companies</a>
         </li>
         <li>
-          <%= link_to "Employee",contractor_root_path %>
+          <%= link_to "Employees",contractor_root_path %>
         </li>
         <li>
           <%= link_to  new_employee_registration_path do %>
-            <%= t(".sign_up", default: "Log up") %>
+
+            <%= t(".sign_up", default: "Sign up") %>
           <% end %>
         </li>
         <% if employee_signed_in? %>
@@ -39,7 +37,7 @@
               <i class="fa fa-sign-out"></i><%= t(".sign_out", default: "Log out") %>
             <% end %>
           </li>
-        <% else %>F
+        <% else %>
           <li>
             <%= link_to t(".sign_in", default: "Login"), new_employee_session_path %>
           </li>
