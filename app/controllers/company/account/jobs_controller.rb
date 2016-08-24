@@ -16,7 +16,7 @@ class Company::Account::JobsController < ApplicationController
     @job = JobOffer.new(job_params)
     @job.company = current_company
     @job.save
-    redirect_to company_account_profile_path
+    redirect_to company_account_job_path(@job)
   end
 
   def edit
@@ -39,7 +39,7 @@ class Company::Account::JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job_offer).permit(:city, :event, :start_date, :end_date, :address, :wage, :job_description, :photo, :photo_cache)
+    params.require(:job_offer).permit(:name, :city, :event, :start_date, :end_date, :address, :wage, :job_description, :photo, :photo_cache)
   end
 
   def set_job_offer
