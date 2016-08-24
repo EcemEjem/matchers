@@ -1,7 +1,7 @@
 <div class="profile-wrapper anchor">
   <div class="profile-information">
     <div class="profile-image">
-      <%= cl_image_tag current_employee.photo, height: 200, width: 200, crop: :fill %>
+      <%= cl_image_tag current_employee.linkedin_photo_url, height: 200, width: 200, crop: :fill %>
     </div>
     <div class="profile-content">
       <span><%= current_employee.first_name %> <%= current_employee.last_name %></span>
