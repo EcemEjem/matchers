@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :companies
-  devise_for :employees
+  # is it companies and amployees or contractor and company
+  devise_for :companies # controllers: { omniauth_callbacks: 'company/omniauth_callbacks' }
+  devise_for :employees, controllers: { omniauth_callbacks: 'contractor/omniauth_callbacks' }
+  
   root to: 'pages#home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
