@@ -1,11 +1,4 @@
-<div class="container anchor">
-  <div class="wrapper-white">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <%= link_to "Edit", edit_company_account_profile_path(@job) %>
-      </div>
-    </div>
-  </div>
+<div class="container anchor wrapper-white">
   <div class="row">
     <div class="col-sx-12">
       <div class="profile-title">
@@ -13,33 +6,47 @@
       </div>
     </div>
   </div>
-  <div class="profile-details">
-    <p>Profile Details</p>
-    <p>Name: <%= current_company.name %></p>
-    <p>Industry: <%= current_company.industry %></p>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="profile-details">
+        <p>Profile Details</p>
+        <p><%= image_tag(current_company.photo) %></p>
+        <p>Name: <%= current_company.name %></p>
+        <p>Industry: <%= current_company.industry %></p>
+        <%= link_to 'Edit', edit_company_account_profile_path(@job) %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class=add-job-offer>
+        <p><%= link_to "See all offers",company_account_jobs_path, class: "ui grey button" %></p>
+        <p><%= link_to "Add Job Offer",new_company_account_job_path, class: "ui green button add-job-offer" %></p>
+      </div>
+    </div>
   </div>
 </div>
 <div class="container">
   <div class="row">
     <% current_company.job_offers.each do |job_offer| %>
     <div class="col-xs-12 col-md-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url('<%= job_offer.photo.present? ? cl_image_path(job_offer.photo, height: 200, width: 200, crop: :fill) : image_path('01_city.jpg') %>');">
-        <div class="title-name"><h4><%= job_offer.name %></h4></div>
-        <div class="title-card"><h3><%= job_offer.city %></h3></div>
+      <div class="card" style="background-color: #FAEBD7" >
+        <div class="jcol-xs-12 col-md-6">
+          <div class="job-offer-picture"><%= job_offer.photo.present? ? cl_image_tag(job_offer.photo, height: 200, width: 200, crop: :fill) : image_tag('01_city.jpg') %></div>
+        </div>
+        <div class="jcol-xs-12 col-md-6">
+          <div class="title-name"><h4><%= job_offer.name %></h4></div>
+          <div class="title-name"><h3><%= job_offer.city %></h3></div>
+        </div>
+
         <div class="card-description">
           <h4><%= job_offer.job_applications.count %> Applicants</h4>
           <%= link_to "VIEW JOB", company_account_job_path(job_offer) %>
+          <p><%= unread_job_offer_applications_count(job_offer) %> New</p>
         </div>
+      </div>
       </div>
     </div>
     <% end %>
   </div>
-  <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <%= link_to "See all offers",company_account_jobs_path, class: "ui grey button" %>
-        <%= link_to "Add Job Offer",new_company_account_job_path, class: "ui green button add-job-offer" %>
-      </div>
-    </div>
   <div class="row">
     <% @job_applications.each do |job_application| %>
     <div class="col-xs-12 col-md-4">
@@ -54,8 +61,7 @@
             <span class="date">Joined in 2013</span>
           </div>
           <div class="description">
-            Kristy is an art director living in New York.
-          </div>
+           </div>
         </div>
         <div class="extra content">
           <a>
