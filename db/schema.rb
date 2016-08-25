@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824111351) do
+ActiveRecord::Schema.define(version: 20160825102629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,13 +98,17 @@ ActiveRecord::Schema.define(version: 20160824111351) do
     t.integer  "experience"
     t.string   "company"
     t.string   "title"
-    t.integer  "time"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "employee_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.index ["employee_id"], name: "index_work_experiences_on_employee_id", using: :btree
   end
 
   add_foreign_key "job_applications", "employees"
   add_foreign_key "job_applications", "job_offers"
   add_foreign_key "job_offers", "companies"
+  add_foreign_key "work_experiences", "employees"
 end

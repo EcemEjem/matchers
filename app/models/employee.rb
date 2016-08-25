@@ -9,6 +9,7 @@ class Employee < ApplicationRecord
 
   has_many :job_applications
   has_many :job_offers, through: :job_applications
+  has_many :work_experiences
 
   validates :first_name,     presence: true, on: :update
   validates :last_name,      presence: true, on: :update
@@ -20,7 +21,7 @@ class Employee < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, 
+         :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:linkedin]
 
   def self.find_for_linkedin_oauth(auth)
