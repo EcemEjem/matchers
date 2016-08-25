@@ -1,4 +1,4 @@
-class Company::Account::JobsController < ApplicationController
+class Company::Account::JobsController < Company::BaseController
     before_action :set_job_offer, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -6,6 +6,9 @@ class Company::Account::JobsController < ApplicationController
   end
 
   def show
+    @job.job_applications.each do |job_application|
+      job_application.update(read_at: Time.now)
+    end
   end
 
   def new
@@ -16,7 +19,7 @@ class Company::Account::JobsController < ApplicationController
     @job = JobOffer.new(job_params)
     @job.company = current_company
     @job.save
-    redirect_to company_account_job_path(@job)
+    redirect_to company_account_profile_path(current_company)
   end
 
   def edit
