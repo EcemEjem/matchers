@@ -12,28 +12,55 @@
     <div class="col-md-7 box2">
       <div class="row">
         <div class="col-md-3">
-          <p>Job description:</p>
+          <p>Position:</p>
         </div>
         <div class="col-md-9">
-          <p><%=@job.job_description%></p>
+          <p><%= @job.name %></p>
         </div>
       </div>
       <hr>
       <div class="row">
         <div class="col-md-3">
-          <p>Sales associates:</p>
+          <p>Trade Show:</p>
         </div>
         <div class="col-md-9">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, ea, odio! Cumque, dolores. Perspiciatis odit culpa, ipsum perferendis quos est sint voluptates ullam, unde iusto possimus architecto quia nesciunt in.</p>
+          <p><%= @job.event %></p>
         </div>
       </div>
       <hr>
       <div class="row">
         <div class="col-md-3">
-          <p>Fashion industry:</p>
+          <p>Duration:</p>
         </div>
         <div class="col-md-9">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, ea, odio! Cumque, dolores. Perspiciatis odit culpa, ipsum perferendis quos est sint voluptates ullam, unde iusto possimus architecto quia nesciunt in.</p>
+          <p><%= @job.start_date %> - <%= @job.end_date %></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <p>Locatiion:</p>
+        </div>
+        <div class="col-md-9">
+          <p><%=@job.address%></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <p>Wage:</p>
+        </div>
+        <div class="col-md-9">
+          <p><%=@job.wage%> $</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <p>Description:</p>
+        </div>
+        <div class="col-md-9">
+          <p><%= @job.job_description %></p>
         </div>
       </div>
       <hr>
