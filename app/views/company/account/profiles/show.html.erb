@@ -47,31 +47,4 @@
     </div>
     <% end %>
   </div>
-  <div class="row">
-    <% @job_applications.each do |job_application| %>
-    <div class="col-xs-12 col-md-4">
-      <div class="card-account">
-        <div class="image">
-          <%= image_tag 'profile.jpg' %>
-        </div>
-        <div class="content">
-          <h2><%= job_application.employee.first_name %></h2>
-          <h4><%= job_application.job_offer.name %></h4>
-          <div class="meta">
-            <span class="date">Joined in 2013</span>
-          </div>
-          <div class="description">
-           </div>
-        </div>
-        <div class="extra content">
-          <a>
-            <i class="user icon"></i>
-            22 Friends
-          </a>
-        </div>
-      </div>
-    </div>
-    <% end  %>
-  </div>
-
 </div>

@@ -6,6 +6,9 @@ class Company::Account::JobsController < Company::BaseController
   end
 
   def show
+    @job.job_applications.each do |job_application|
+      job_application.update(read_at: Time.now)
+    end
   end
 
   def new
