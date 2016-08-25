@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :industry, :description])
   end
-
   # to add more things to the log-in
   # added sanitizer here for the companies as we need more things for companies
   # other than what's provided with device (log-in and password)

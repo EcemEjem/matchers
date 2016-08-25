@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824111351) do
+ActiveRecord::Schema.define(version: 20160825100343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20160824111351) do
     t.integer  "employee_id"
     t.integer  "job_offer_id"
     t.text     "motivation_letter"
+    t.datetime "read_at"
     t.index ["employee_id"], name: "index_job_applications_on_employee_id", using: :btree
     t.index ["job_offer_id"], name: "index_job_applications_on_job_offer_id", using: :btree
   end
