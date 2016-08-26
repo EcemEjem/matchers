@@ -1,4 +1,6 @@
 class Employee < ApplicationRecord
+  after_create :send_welcome_email
+
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 
@@ -56,6 +58,12 @@ class Employee < ApplicationRecord
 
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
+  end
+
+  private
+
+  def send_welcome_email
+    EmployeeMailer.welcome(self).deliver_now
   end
 
 end
