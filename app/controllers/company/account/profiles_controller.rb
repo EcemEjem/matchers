@@ -4,6 +4,7 @@ class Company::Account::ProfilesController < Company::BaseController
   def show
     @job_offers = current_company.job_offers.order(created_at: :desc).limit(3)
     @job_applications = current_company.job_applications.order(created_at: :desc)
+    get_suggested_employees
   end
 
   def edit
@@ -28,6 +29,17 @@ class Company::Account::ProfilesController < Company::BaseController
     params.require(:company).permit(:name, :industry, :description, :photo, :photo_cache)
   end
 
+  def get_suggested_employees
+    @suggested_employees = []
+    Employee.all.each do |employee|
+      employee.work_experiences.each do |work_experience|
+        if work_experience.industry == current_company.industry
+          @suggested_employees << employee
+        end
+      end
+    end
+   @suggested_employees = @suggested_employees.uniq
+  end
 end
 
 
