@@ -16,8 +16,11 @@
           <%= cl_image_tag(job_application.employee.photo, height: 200, width: 200, crop: :fill) %>
         </div>
         <div class="content">
+          <%= link_to contractor_path(job_application.employee) do %>
           <h2><%= job_application.employee.first_name %></h2>
           <h4><%= job_application.job_offer.name %></h4>
+          <% end %>
+
           <div class="meta">
             <span class="date">Joined in 2013</span>
           </div>
