@@ -9,83 +9,89 @@
 <div class="wrapper-grey">
   <div class="container anchor">
     <div class="row">
-    <div class="col-md-7 box2">
-      <div class="row">
-        <div class="col-md-3">
-          <p>Position:</p>
-        </div>
-        <div class="col-md-9">
-          <p><%= @job.name %></p>
+    <div class="col-md-7 col-xs-12">
+        <div class="box2">
+          <div class="row">
+            <div class="col-md-3">
+              <p>Position:</p>
+            </div>
+            <div class="col-md-9">
+              <p><%= @job.name %></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Trade Show:</p>
+            </div>
+            <div class="col-md-9">
+              <p><%= @job.event %></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Duration:</p>
+            </div>
+            <div class="col-md-9">
+              <p><%= @job.start_date %> - <%= @job.end_date %></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Locatiion:</p>
+            </div>
+            <div class="col-md-9">
+              <p><%=@job.address%></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Wage:</p>
+            </div>
+            <div class="col-md-9">
+              <p><%=@job.wage%> $</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Description:</p>
+            </div>
+            <div class="col-md-9">
+              <p><%= @job.job_description %></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <%= link_to "Apply now", new_contractor_job_job_application_path(@job), class: "btn-success btn-lg btn2" %>
+          </div>
         </div>
       </div>
-      <hr>
-      <div class="row">
-        <div class="col-md-3">
-          <p>Trade Show:</p>
-        </div>
-        <div class="col-md-9">
-          <p><%= @job.event %></p>
+      <div class="col-md-5 col-xs-12">
+        <div class="box2">
+          <div id="map" style="height: 755px;">
+          </div>
         </div>
       </div>
-      <hr>
-      <div class="row">
-        <div class="col-md-3">
-          <p>Duration:</p>
-        </div>
-        <div class="col-md-9">
-          <p><%= @job.start_date %> - <%= @job.end_date %></p>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-md-3">
-          <p>Locatiion:</p>
-        </div>
-        <div class="col-md-9">
-          <p><%=@job.address%></p>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-md-3">
-          <p>Wage:</p>
-        </div>
-        <div class="col-md-9">
-          <p><%=@job.wage%> $</p>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-md-3">
-          <p>Description:</p>
-        </div>
-        <div class="col-md-9">
-          <p><%= @job.job_description %></p>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <%= link_to "Apply now", new_contractor_job_job_application_path(@job), class: "btn-success btn-lg btn2" %>
-      </div>
-    </div>
-    <div id="map" style="width: 400px; height: 650px;" class="col-md-3 col-md-offset-1 box2">
-    </div>
     </div>
   </div>
 </div>
 
 <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: 'map' } }, function() {
-    markers = handler.addMarkers(<%= raw @hash.to_json %>);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    if (markers.length == 0) {
-      handler.getMap().setZoom(2);
-    } else if (markers.length == 1) {
-      handler.getMap().setZoom(14);
-    }
-    });
-  <% end %>
+<%= javascript_tag do %>
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: { id: 'map' } }, function() {
+markers = handler.addMarkers(<%= raw @hash.to_json %>);
+handler.bounds.extendWith(markers);
+handler.fitMapToBounds();
+if (markers.length == 0) {
+handler.getMap().setZoom(2);
+} else if (markers.length == 1) {
+handler.getMap().setZoom(14);
+}
+});
+<% end %>
 <% end %>
