@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.3/components/card.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/components/button.css">
 
+    <% if params[:action] != "home" %>
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+    <% end %>
 
     <title>Matchers</title>
     <%= csrf_meta_tags %>
