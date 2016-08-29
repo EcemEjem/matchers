@@ -1,7 +1,5 @@
-<!-- margie work -->
-
 <h1 class="anchor center"> <%= @job.name %> </h1>
-<h3 class="center">You have 3 applicants</h3>
+<h3 class="center">You have <%= @job.job_applications.count %> applicants for this position</h3>
 <hr>
 <div class="container">
  <div class="row">
@@ -29,7 +27,7 @@
             <div class="meta">
               <span class="date">Joined in 2013</span>
             </div>
-            <%= link_to 'See profile', contractor_path(job_application.employee), class: 'btn btn-primary' %>
+            <%= link_to 'See profile', company_account_job_application_path(job_application.employee), class: 'btn btn-primary' %>
           </div>
         </div>
 

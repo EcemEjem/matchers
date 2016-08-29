@@ -19,7 +19,7 @@
 
     <% end %>
 
-    <title>Matchers</title>
+    <title>Matcher</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -27,7 +27,10 @@
   </head>
 
   <body>
+  <% unless params[:controller] == "pages" && params[:action] == "home" %>
+
     <%= render 'shared/navbar' %>
+  <% end %>
     <%= yield %>
 
     <%# if controller_name != "pages" && action_name != "home" %>
