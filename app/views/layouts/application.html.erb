@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/components/button.css">
 
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="js/prefixfree.min.js"></script>
 
     <% if params[:action] != "home" %>
 
@@ -31,6 +30,7 @@
 
     <%= render 'shared/navbar' %>
   <% end %>
+   <%= render 'shared/flashes' %>
     <%= yield %>
 
     <%# if controller_name != "pages" && action_name != "home" %>
