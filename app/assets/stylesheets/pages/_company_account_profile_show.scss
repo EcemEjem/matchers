@@ -1,0 +1,36 @@
+/*----- header title of the profile account company------*/
+.transbox {
+  font-family:Ssans-serif;
+  padding-bottom: 25px;
+}
+/*-------account profile photo -----------------------------*/
+.log-picture {
+  position: absolute;
+  display: flex;
+  margin-top: 25px;
+  margin-left: 10px;
+  -webkit-box-pack: center;
+  box-shadow: 1px 1px 1px rgba(1,1,1,0.3);
+}
+/*------- button to add new job offer----------------------*/
+.add-job-offer {
+  position: absolute;
+  display: flex;
+  margin-top: 50px;
+  margin-left: 50px;
+  background-color: slategray;
+  border-color: slategrey;
+}
+/*------- job offer CARDS----------------------------------*/
+.bootstrap-demo {
+  margin:10px;
+}
+.card {
+  width:325px;
+}
+/*---------button to see all job offer------------------------*/
+.see-all-offers {
+  margin-top: 50px;
+  background-color: slategray;
+  border-color: slategrey;
+}
