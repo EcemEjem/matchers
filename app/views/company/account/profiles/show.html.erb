@@ -47,31 +47,36 @@
 
 <!---------- ------- job offers cards -------------------->
   <div class="row anchor">
-    <% current_company.job_offers.each do |job_offer| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card">
-          <%= job_offer.photo.present? ? cl_image_tag(job_offer.photo, height: 240, width: 350, crop: :fill) : image_tag('01_city.jpg') %>
-          <div class="card-block">
-            <%= link_to "See Applicants", company_account_job_path(job_offer), class: "card-link"%>
+    <div class="bootstrap-demo">
+      <% current_company.job_offers.each do |job_offer| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+            <%= job_offer.photo.present? ? cl_image_tag(job_offer.photo, class:"card-img-top", height: 194, width: 323, crop: :fill) : image_tag('01_city.jpg') %>
+            <div class="card-block">
+              <%= link_to "See Applicants", company_account_job_path(job_offer), class: "card-link"%>
+            </div>
+            <div class="card-block">
+              <h4 class="card-title">Position: <%= job_offer.name %></h4>
+              <p class="card-text">City: <%= job_offer.city %></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><%= unread_job_offer_applications_count(job_offer) %> New Applicants</li>
+              <li class="list-group-item"><%= job_offer.job_applications.count %> Applicants</li>
+            </ul>
           </div>
-          <div class="card-block">
-            <h4 class="card-title">Position: <%= job_offer.name %></h4>
-            <p class="card-text">City: <%= job_offer.city %></p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><%= unread_job_offer_applications_count(job_offer) %> New Applicants</li>
-            <li class="list-group-item"><%= job_offer.job_applications.count %> Applicants</li>
-          </ul>
         </div>
-      </div>
-    <% end %>
-  </div>
-<!---------- ------- See all jobs offer cards -------------------->
-  <div class="row">
-    <div class="col-xs-12">
-      <%= link_to "See all offers",company_account_jobs_path, class: "btn btn-info btn-lg" %>
+      <% end %>
     </div>
   </div>
+<!---------- ------- See all jobs offer cards -------------------->
+  <div class="row anchor text-center">
+    <div class="col-xs-12">
+      <%= link_to "See all offers", company_account_jobs_path, class: "btn btn-info btn-lg see-all-offers" %>
+    </div>
+  </div>
+
+<!---------- suggested_employee--------------  ---------->
+
   <div class="suggested_employee anchor">
     <h4>Suggested Employee <%= current_company.industry %></h4>
   </div>
