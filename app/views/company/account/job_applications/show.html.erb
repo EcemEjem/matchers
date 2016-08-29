@@ -11,7 +11,7 @@
      </div>
     <% @job_applications.each do |job_application| %>
     <div class="col-xs-12 col-md-4">
-      <div class="card-account">
+      <div class="card">
         <div class="image">
           <%= cl_image_tag(job_application.employee.photo, height: 200, width: 200, crop: :fill) %>
         </div>
