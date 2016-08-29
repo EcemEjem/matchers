@@ -3,53 +3,49 @@
     <div class="jumbo-wrapper">
       <div class="jumbotron">
         <div class="title-info">
-          <h1 class="display-3"><%= @job_application.employee.first_name %></h1>
+          <h2 class="display-3"><%= @job_application.employee.first_name %></h2>
           <%= cl_image_tag @job_application.employee.photo, crop: :fill, height: 100, width: 100, class: "avatar-large" %>
         </div>
         <p class="lead"> An application for <%= @job_application.job_offer.company.name %>, to the position of <%= @job_application.job_offer.name %></p>
         <hr class="m-y-2">
         <p><%= @job_application.motivation_letter %></p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </p>
       </div>
 
       <div class="application-status">
-        <h2> <strong> Candidate's job application status: </strong> </h2>
-        <%= @job_application.status %>
-        <div class="application-status-actions">
-          <%= link_to "accept", accept_company_account_job_application_path, method: :patch  %>
+        <h2> <strong> Candidate's job application status: <%= @job_application.status %></strong> </h2>
 
-          <%= link_to "decline", decline_company_account_job_application_path, method: :patch  %>
+        <div class="application-status-actions">
+        <p class="lead">
+          <%= link_to "Accept", accept_company_account_job_application_path, method: :patch, class:"btn btn-primary btn-lg" %>
+          <%= link_to "Decline", decline_company_account_job_application_path, method: :patch, class:"btn btn-primary btn-lg"  %>
+        </p>
+
         </div>
       </div>
 
     </div>
   </div>
 
-
   <div class="row">
     <% @job_application.employee.work_experiences.each do |work_experience| %>
     <% if work_experience.title == "" %>
-    <% title = "unavailable" %>
+    <% title = "Unavailable" %>
     <% else %>
     <% title = work_experience.title %>
     <% end %>
     <div class="col-xs-4">
       <div class="card">
         <div class="card-block">
-          <h4 class="card-title"><%= title %></h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h4 class="card-title">Title: <%= title %></h4>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Vestibulum at eros</li>
+          <li class="list-group-item">Company: < <%= work_experience.company %></li>
+          <li class="list-group-item">Industry: < <%= work_experience.industry %></li>
+          <li class="list-group-item">Experience: <%= work_experience.experience %></li>
+          <li class="list-group-item">Start Date: <%= work_experience.start_date %></li>
+          <li class="list-group-item">End Date: <%= work_experience.end_date %></li>
+          <p class="list-group-item">Description: <%= work_experience.description %></p>
         </ul>
-        <div class="card-block">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
       </div>
     </div>
     <% end %>
