@@ -1,14 +1,13 @@
-<div class="form-wrapper" style="margin-top: 200px;">
-new
-work_experience
-<%= simple_form_for @work_experience, url: contractor_account_work_experiences_path do |f| %>
-<%= f.input :industry %>
-<%= f.input :experience %>
-<%= f.input :company %>
-<%= f.input :title %>
-<%= f.input :start_date %>
-<%= f.input :end_date %>
-<%= f.input :description %>
-<%= f.submit %>
-<% end %>
+<div id="employee-bg"></div>
+  <%= simple_form_for @work_experience, url: contractor_account_work_experiences_path, class:"panel panel-default" do |f| %>
+    <h1 style="color:white">Add your work experience and let the company to know about you</h1>
+    <%= f.input :industry %>
+    <%= f.input :experience %>
+    <%= f.input :company %>
+    <%= f.input :title %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :description %>
+    <%= f.submit %>
+  <% end %>
 </div>

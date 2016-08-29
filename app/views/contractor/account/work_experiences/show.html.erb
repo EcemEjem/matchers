@@ -1,7 +1,50 @@
-<div class="form-wrapper" style="margin-top: 200px;">
-show
-workexperience
+<div class="contenair">
+  <h2 class="text-center">welcome to the my profile</h2>
+  <h5>Below you will find information about my experiences</h5>
+  <div class="work-experience-table">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><em>Industry:</em></td>
+          <td><%= @work_experience.industry %></td>
+        </tr>
+        <tr>
+          <td><em>Experience:</em></td>
+          <td><%= @work_experience.experience %></td>
+        </tr>
+        <tr>
+        <td><em>Company:</em></td>
+          <td><%= @work_experience.company %></td>
+        </tr>
+        <tr>
+          <td><em>Title:</em></td>
+          <td><%= @work_experience.title %></td>
+        </tr>
+        <tr>
+          <td><em>Start date:</em></td>
+          <td><%= @work_experience.start_date %></td>
+        </tr>
+        <tr>
+          <td><em>End day:</em></td>
+          <td><%= @work_experience.end_date %></td>
+        </tr>
+        <tr>
+                <tr>
+          <td><em>Duration:</em></td>
+          <td><%= @work_experience.duration %> years</td>
+        </tr>
+        <tr>
+          <td><em>Description:</em></td>
+          <td><%= @work_experience.description %></td>
+        </tr>
+        <tr>
+          <td>Edit your profile:</td>
+          <td><em><%= link_to 'Edit', edit_contractor_account_work_experience_path(@work_experience), class: "btn btn-secondary", id: "edit-button", style:"text-decoration:none" %></em></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 
-contractor_account_work_experience GET      /contractor/account/work_experiences/:id
+

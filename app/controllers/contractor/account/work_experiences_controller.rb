@@ -17,7 +17,7 @@ class Contractor::Account::WorkExperiencesController < Contractor::BaseControlle
     @work_experience = WorkExperience.new(work_experience_params)
     @work_experience.employee = current_employee
     if @work_experience.save!
-      redirect_to contractor_account_work_experience_path(current_employee)
+      redirect_to contractor_account_work_experience_path(@work_experience)
     else
       render 'new'
     end
@@ -40,7 +40,7 @@ class Contractor::Account::WorkExperiencesController < Contractor::BaseControlle
   private
 
   def work_experience_params
-    params.require(:work_experience).permit(:industry, :experience, :company, :title, :time, :description)
+    params.require(:work_experience).permit(:industry, :experience, :company, :title, :time, :description, :start_date, :end_date)
   end
 
   def set_work_experience
