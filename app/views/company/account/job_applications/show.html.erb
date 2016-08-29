@@ -1,33 +1,59 @@
-<h1 class="anchor"> Page for company/account/jobapplications/id</h1>
 <div class="container">
- <div class="row">
-  <div class="description">
-    <p><%= @job_application.job_offer.name %></p>
-
-  </div>
-  <p> <%= @job_application.motivation_letter %> </p>
-  <div class="col-xs-12 col-md-4">
-    <div class="card-account">
-      <div class="image">
-        <%= cl_image_tag(@job_application.employee.photo, height: 200, width: 200, crop: :fill) %>
+  <div class="row">
+    <div class="jumbo-wrapper">
+      <div class="jumbotron">
+        <div class="title-info">
+          <h1 class="display-3"><%= @job_application.employee.first_name %></h1>
+          <%= cl_image_tag @job_application.employee.photo, crop: :fill, height: 100, width: 100, class: "avatar-large" %>
+        </div>
+        <p class="lead"> An application for <%= @job_application.job_offer.company.name %>, to the position of <%= @job_application.job_offer.name %></p>
+        <hr class="m-y-2">
+        <p><%= @job_application.motivation_letter %></p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p>
       </div>
-      <div class="content">
-        <h2><%= @job_application.employee.first_name %></h2>
-        <h4><%= @job_application.job_offer.name %></h4>
-        <div class="meta">
-          <span class="date">Joined in 2013</span>
+
+      <div class="application-status">
+        <h2> <strong> Candidate's job application status: </strong> </h2>
+        <%= @job_application.status %>
+        <div class="application-status-actions">
+          <%= link_to "accept", accept_company_account_job_application_path, method: :patch  %>
+
+          <%= link_to "decline", decline_company_account_job_application_path, method: :patch  %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="row">
+    <% @job_application.employee.work_experiences.each do |work_experience| %>
+    <% if work_experience.title == "" %>
+    <% title = "unavailable" %>
+    <% else %>
+    <% title = work_experience.title %>
+    <% end %>
+    <div class="col-xs-4">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title"><%= title %></h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-block">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
         </div>
       </div>
     </div>
+    <% end %>
   </div>
 </div>
-</div>
-<%= link_to "edit this job", edit_company_account_profile_path %>
 
-<div>
-  <%= @job_application.status %>
-</div>
 
-<%= link_to "accept", accept_company_account_job_application_path, method: :patch  %>
-
-<%= link_to "decline", decline_company_account_job_application_path, method: :patch  %>
