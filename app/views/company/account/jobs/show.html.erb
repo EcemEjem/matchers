@@ -1,119 +1,38 @@
-<h1 class="anchor header-job offer">You have <%= @job.job_applications.count %> Applicants for this position</h1>
+<h1 class="anchor center"> <%= @job.name %> </h1>
+<h3 class="center">You have <%= @job.job_applications.count %> applicants for this position</h3>
+<hr>
 <div class="container">
-   <div class="row">
-    <div class="col-xs-12">
-      <div class="description">
-        <p>Event: <%= @job.event %></p>
-        <p>Name: <%= @job.name %></p>
-        <p>City: <%= @job.city %></p>
-        <p>Description: <%= @job.job_description %></p>
-        <p>Duration: <%= @job.start_date %> - <%= @job.end_date %></p>
-        <p>Wage: <%= @job.wage %> $ </p>
-       </div>
-     </div>
-    <% @job.job_applications.each do |job_application| %>
+ <div class="row">
+  <div class="description grey-background">
+    <p>Event: <%= @job.event %></p>
+    <p>Name: <%= @job.name %></p>
+    <p>City: <%= @job.city %></p>
+    <p>Description: <%= @job.job_description %></p>
+    <p>Duration: <%= @job.start_date %> - <%= @job.end_date %></p>
+    <p>Wage: <%= @job.wage %> $ </p>
+  </div>
+</div>
+
+<h3 class="center">List of new applicants</h3>
+<div class="row">
+  <% @job.job_applications.each do |job_application| %>
     <div class="col-xs-12 col-md-4">
-      <div class="card-account">
-        <div class="image">
-          <%= cl_image_tag(job_application.employee.photo, height: 150, width: 150, crop: :fill) %>
-        </div>
-        <div class="content">
-         <%= link_to company_account_job_application_path(job_application.employee) do %>
-          <h2><%= job_application.employee.first_name %></h2>
-          <h4><%= job_application.job_offer.name %></h4>
-          <% end %>
-
-          <div class="meta">
-            <span class="date">Joined in 2013</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  </div>
-</div>
-<%= link_to "edit this job", edit_company_account_job_path %> |
-<%= link_to "back", company_account_profile_path %>
 
 
-
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(233, 100, 67, 0.4) 40%, rgba(144, 78, 149, 0.4) 50%), url('<%= @job.photo.present? ? cl_image_path(@job.photo) : "https://unsplash.it/800/800/?random"; %>');">
-  <div class="banner-content">
-    <h2><%=@job.name%></h2>
-    <%= link_to "Edit", edit_company_account_job_path, class: "btn-success btn-lg" %>
-  </div>
-</div>
-
-<div class="wrapper-grey">
-  <div class="container anchor">
-    <div class="row">
-      <div class="box2">
-        <div class="row">
-          <div class="col-md-3">
-            <p>Position:</p>
-          </div>
-          <div class="col-md-9">
-            <p><%= @job.name %></p>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-3">
-            <p>Trade Show:</p>
-          </div>
-          <div class="col-md-9">
-            <p><%= @job.event %></p>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-3">
-            <p>Duration:</p>
-          </div>
-          <div class="col-md-9">
-            <p><%= @job.start_date %> - <%= @job.end_date %></p>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-3">
-            <p>Location:</p>
-          </div>
-          <div class="col-md-9">
-            <p><%=@job.address%></p>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-3">
-            <p>Wage:</p>
-          </div>
-          <div class="col-md-9">
-            <p><%=@job.wage%> $</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="wrapper-grey">
-  <div class="container anchor">
-    <div class="row">
-      <div class="box2">
-      <% @job.job_applications.each do |job_application| %>
-          <div class="row">
-            <div class="col-md-6">
-              <p>Hello</p>
+        <div class="card">
+          <%= cl_image_tag(job_application.employee.photo, crop: :fill, class: 'card-img-top') %>
+          <div class="card-block">
+            <h2 class="card-title"><%= job_application.employee.first_name %></h2>
+            <h4 class="card-title"><%= job_application.job_offer.name %></h4>
+            <div class="meta">
+              <span class="date">Joined in 2013</span>
             </div>
-            <div class="col-md-6">
-              <p>Hello</p>
-            </div>
+            <%= link_to 'See profile', company_account_job_application_path(job_application.employee), class: 'btn btn-primary' %>
           </div>
-        <% end %>
-      </div>
+        </div>
+
     </div>
-  </div>
+  <% end %>
 </div>
 
-<p>List of all applicants</p>
+<%= link_to "edit this job", edit_company_account_job_path %>

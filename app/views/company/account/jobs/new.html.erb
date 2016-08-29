@@ -1,8 +1,8 @@
-
-<div class="container anchor">
+<div id="company-bg"></div>
   <div class="row">
     <div class="col-xs-12 offset-1">
-      <%= simple_form_for @job, url: company_account_jobs_path do |f| %>
+      <%= simple_form_for @job, url: company_account_jobs_path, class:"panel panel-default" do |f| %>
+      <h1 style="color:white">Add your job offer</h1>
         <%= f.input :name %>
         <%= f.input :event %>
         <%= f.input :city %>
@@ -17,4 +17,5 @@
       <% end %>
     </div>
   </div>
-</div>
+
+

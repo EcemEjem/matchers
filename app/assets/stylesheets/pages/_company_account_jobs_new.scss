@@ -1,0 +1,10 @@
+#company-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: image-url('03_photoForm.jpg') center center fixed;
+  background-size: cover;
+  -webkit-filter: blur(5px);
+}
