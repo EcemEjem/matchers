@@ -6,8 +6,9 @@
   margin-top: 25px;
   margin-left: 10px;
   box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.3);
+}
 
-.center {
+.text-center {
   text-align: center;
 }
 
@@ -23,4 +24,8 @@
   border-radius: 3pt;
   margin: 20pt;
   box-shadow: 1px 1px 1px rgba(1,1,1,0.5);
+}
+
+.padding-bottom {
+  padding-bottom: 20px;
 }
