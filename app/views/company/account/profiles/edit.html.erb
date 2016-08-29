@@ -1,5 +1,5 @@
 <div id="bg"></div>
-<%= simple_form_for @profile, url:company_account_profile_path(@profile) do |f|  %>
+<%= simple_form_for @profile, url:company_account_profile_path(@profile), class:"panel panel-default" do |f|  %>
 <h1 style="color:white">Edit your company profile</h1>
     <label for=""></label>
     <%= f.input :name, required: true, name:"", id:"", placeholder:"name", class:"email"  %>
