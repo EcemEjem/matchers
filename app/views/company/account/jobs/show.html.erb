@@ -15,28 +15,36 @@
   </div>
 </div>
 
+<h3 class="center">List of new applicants</h3>
 <div class="row">
-  <h3 class="center">List of new applicants</h3>
   <% @job.job_applications.each do |job_application| %>
-  <div class="col-xs-12 col-md-4">
-    <%= link_to contractor_path(job_application.employee) do %>
-    <div class="card-account">
-      <div class="image">
-        <%= cl_image_tag(job_application.employee.photo, height: 150, width: 200, crop: :fill) %>
-      </div>
-      <div class="content">
-        <h2><%= job_application.employee.first_name %></h2>
-        <h4><%= job_application.job_offer.name %></h4>
-        <div class="meta">
-          <span class="date">Joined in 2013</span>
+    <div class="col-xs-12 col-md-4">
+
+      <%= link_to contractor_path(job_application.employee) do %>
+        <div class="card">
+
+          <%= cl_image_tag(job_application.employee.photo, height: 150, width: 200, crop: :fill, class: 'card-img-top') %>
+          <div class="card-block">
+            <h2 class="card-title"><%= job_application.employee.first_name %></h2>
+            <h4 class="card-title"><%= job_application.job_offer.name %></h4>
+            <div class="meta">
+              <span class="date">Joined in 2013</span>
+            </div>
+          </div>
         </div>
-      </div>
+      <% end %>
+
     </div>
-    <% end %>
-  </div>
   <% end %>
 </div>
 
-
+<div class="card">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">Card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
 
 <%= link_to "edit this job", edit_company_account_job_path %>
