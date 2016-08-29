@@ -1,14 +1,14 @@
 <div class="wrapper-lightblue anchor">
   <div class="container">
-    <h1 class="header">Apply to this job offer</h1>
+    <h1 class="header">Apply to this job offer </h1>
   </div>
   <div class="box effect1">
     <div class="job-offer-details">
-      <h3>Title: <%= @job_offer.name %></h3>
+      <h2>Title: <%= @job_offer.name %></h2>
     </div>
     <div class="job-offer-details">
       <p><strong>Date:</strong> <%= @job_offer.start_date %></p>
-      <p><strong>Wage:</strong> <%= @job_offer.wage %> Euro</p>
+      <p><strong>Wage:</strong> $ <%= @job_offer.wage %> </p>
       <p><strong>City:</strong> <%= @job_offer.city %></p>
       <p><strong>Address:</strong> <%= @job_offer.address %></p>
     </div>

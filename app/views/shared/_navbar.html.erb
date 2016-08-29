@@ -9,40 +9,65 @@
       </button>
       <!-- Logo -->
       <%= link_to root_path, class: "navbar-brand" do %>
-        <% "MaTcHeR" %>
+      <% "MaTcHeR" %>
       <% end %>
     </div>
     <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+
       <ul class='nav navbar-nav navbar-right'>
+
+        <% if employee_signed_in? || company_signed_in? %>
+        <% if employee_signed_in? %>
+
+        <li>
+          <%= link_to destroy_employee_session_path, method: :delete do %>
+            <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
+
+        <% else %>
+
+        <li>
+          <%= link_to destroy_company_session_path, method: :delete do %>
+            <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
+
+        <% end %>
+        <% end %>
+        <% unless params[:controller] == "pages" && params[:action] == "home" %>
+        <% unless current_employee.nil? || current_company.nil?  %>
         <li>
           <a class="page-scroll" id="overview-link" href="#overview">B2B Companies</a>
         </li>
         <li>
           <%= link_to "Employees",contractor_root_path %>
         </li>
+        <% end %>
+        <% if employee_signed_in? || company_signed_in? %>
         <li>
-          <%= link_to  new_employee_registration_path do %>
-
-            <%= t(".sign_up", default: "Sign up") %>
+          <%= link_to edit_contractor_account_profile_path do  %>
+          <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
           <% end %>
         </li>
-        <li>
-          <%= link_to destroy_employee_session_path, method: :delete do %>
-            <%= t(".sign_out", default: "Log out") %>
-          <% end %>
-        </li>
-        <% if employee_signed_in? %>
-          <li>
-            <%= link_to edit_contractor_account_profile_path do  %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-            <% end %>
-          </li>
         <% else %>
-          <li>
-            <%= link_to t(".sign_in", default: "Login"), new_employee_session_path %>
-          </li>
+        <% unless params[:controller] == "devise/sessions" && params[:action] == "new" %>
+  <% if params[:controller] == "pages" && params[:action] == "company" %>
+
+        <li>
+          <%= link_to t(".sign_in", default: "Login"), new_company_session_path %>
+        </li>
+        <% else %>
+
+        <li>
+          <%= link_to t(".sign_in", default: "Login"), new_employee_session_path %>
+        </li>
+
+  <% end %>
+        <% end %>
         <% end %>
       </ul>
+      <% end %>
     </div>
   </div>
 </nav>

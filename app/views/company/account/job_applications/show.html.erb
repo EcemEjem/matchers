@@ -1,30 +1,33 @@
 <h1 class="anchor"> Page for company/account/jobapplications/id</h1>
 <div class="container">
-   <div class="row">
-    <div class="description">
-      <p><%= @job_application. %></p>
-      <p><%= @job_application %></p>
-      <p><%= @job_application %></p>
-      <p><%= @job_application %></p>
-      <p><%= @job_application %></p>
-      <p><%= @job_application%> $ </p>
-     </div>
-    <% @job_applications.each do |job_application| %>
-    <div class="col-xs-12 col-md-4">
-      <div class="card-account">
-        <div class="image">
-          <%= cl_image_tag(job_application.employee.photo, height: 200, width: 200, crop: :fill) %>
-        </div>
-        <div class="content">
-          <h2><%= job_application.employee.first_name %></h2>
-          <h4><%= job_application.job_offer.name %></h4>
-          <div class="meta">
-            <span class="date">Joined in 2013</span>
-          </div>
+ <div class="row">
+  <div class="description">
+    <p><%= @job_application.job_offer.name %></p>
+
+  </div>
+  <p> <%= @job_application.motivation_letter %> </p>
+  <div class="col-xs-12 col-md-4">
+    <div class="card-account">
+      <div class="image">
+        <%= cl_image_tag(@job_application.employee.photo, height: 200, width: 200, crop: :fill) %>
+      </div>
+      <div class="content">
+        <h2><%= @job_application.employee.first_name %></h2>
+        <h4><%= @job_application.job_offer.name %></h4>
+        <div class="meta">
+          <span class="date">Joined in 2013</span>
         </div>
       </div>
     </div>
-    <% end %>
   </div>
 </div>
+</div>
 <%= link_to "edit this job", edit_company_account_job_path %>
+
+<div>
+  <%= @job_application.status %>
+</div>
+
+<%= link_to "accept", accept_company_account_job_application_path, method: :patch  %>
+
+<%= link_to "decline", decline_company_account_job_application_path, method: :patch  %>

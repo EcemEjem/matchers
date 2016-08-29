@@ -3,3 +3,12 @@
 <h1>Your job applications</h1>
 <h1> HERE WE'LL SEE ALL previous job applications, this is right after /contractor/account/profile path. </h1>
 </div>
+
+<div class="job_applications">
+<% @job_applications.each do |job_application| %>
+<div class="job_application">
+  <%= job_application.description %>
+  <%= job_application.status %>
+</div>
+<% end %>
+</div>

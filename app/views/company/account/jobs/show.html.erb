@@ -1,4 +1,4 @@
-<h1 class="anchor header-job offer">You have No... of  Applicants for this position</h1>
+<h1 class="anchor header-job offer">You have <%= @job.job_applications.count %> Applicants for this position</h1>
 <div class="container">
    <div class="row">
     <div class="col-xs-12">
@@ -18,7 +18,7 @@
           <%= cl_image_tag(job_application.employee.photo, height: 150, width: 150, crop: :fill) %>
         </div>
         <div class="content">
-         <%= link_to contractor_path(job_application.employee) do %>
+         <%= link_to company_account_job_application_path(job_application.employee) do %>
           <h2><%= job_application.employee.first_name %></h2>
           <h4><%= job_application.job_offer.name %></h4>
           <% end %>
