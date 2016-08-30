@@ -11,9 +11,7 @@
         <p><%= @job_application.motivation_letter %></p>
       </div>
 
-      <div class="application-status">
-        <h2> <strong> Candidate's job application status: <%= @job_application.status %></strong> </h2>
-
+      <% if @job_application.status == "Pending"  %>
         <div class="application-status-actions">
         <p class="lead">
           <%= link_to "Accept", accept_company_account_job_application_path, method: :patch, class:"btn btn-primary btn-lg" %>
@@ -21,8 +19,11 @@
         </p>
 
         </div>
+        <% else %>
+        <div class="application-status">
+        <h2> <strong> Candidate's job application status: <%= @job_application.status %></strong> </h2>
       </div>
-
+      <% end %>
     </div>
   </div>
 

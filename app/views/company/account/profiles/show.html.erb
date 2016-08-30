@@ -48,7 +48,7 @@
 <!---------- ------- job offers cards -------------------->
   <div class="row anchor">
     <div class="bootstrap-demo">
-      <% current_company.job_offers.each do |job_offer| %>
+      <%  @job_offers.each do |job_offer| %>
         <div class="col-xs-12 col-sm-4">
           <div class="card">
             <%= job_offer.photo.present? ? cl_image_tag(job_offer.photo, class:"card-img-top", height: 194, width: 323, crop: :fill) : image_tag('01_city.jpg') %>
@@ -76,6 +76,7 @@
   </div>
 
 <!---------- suggested_employee--------------  ---------->
+<% unless @suggested_employees.empty? %>
 
   <div class="suggested_employee anchor">
     <h4>Suggested Employee <%= current_company.industry %></h4>
@@ -84,14 +85,15 @@
     <% @suggested_employees.each do |suggested_employee| %>
       <div class="col-xs-12 col-sm-6 col-md-3" >
         <div class="suggested-employee-avatar">
-          <% if current_employee.provider == 'linkedin' %>
-            <%= cl_image_tag current_employee.linkedin_photo_url, height: 100, width: 100, crop: :fill %>
+          <% if suggested_employee.provider == 'linkedin' %>
+            <%= cl_image_tag suggested_employee.linkedin_photo_url, height: 100, width: 100, crop: :fill %>
           <% else  %>
-            <%= cl_image_tag current_employee.photo, height: 100, width: 100, crop: :fill %>
+            <%= cl_image_tag suggested_employee.photo, height: 100, width: 100, crop: :fill %>
           <% end %>
         </div>
-        <%= link_to "#{current_employee.first_name} #{current_employee.last_name}" %>
+        <%= link_to "#{suggested_employee.first_name} #{suggested_employee.last_name}" %>
       </div>
     <% end %>
   </div>
+  <% end %>
 </div>
