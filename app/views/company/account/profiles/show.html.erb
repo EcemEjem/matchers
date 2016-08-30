@@ -84,13 +84,12 @@
   <div class="row">
     <% @suggested_employees.each do |suggested_employee| %>
 
-
       <div class="col-xs-12 col-sm-6 col-md-3" >
         <div class="suggested-employee-avatar">
           <% if suggested_employee.provider == 'linkedin' %>
-            <%= cl_image_tag suggested_employee.linkedin_photo_url, height: 100, width: 100, crop: :fill %>
+            <%= cl_image_tag suggested_employee.linkedin_photo_url, crop: :fill %>
           <% else  %>
-            <%= cl_image_tag suggested_employee.photo, height: 100, width: 100, crop: :fill %>
+            <%= cl_image_tag suggested_employee.photo, crop: :fill %>
           <% end %>
         </div>
         <%= link_to "#{suggested_employee.first_name} #{suggested_employee.last_name}", class: "btn btn-primary btn-lg"  %>
