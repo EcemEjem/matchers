@@ -72,28 +72,37 @@
 
 
 <div class="container">
+  <% if unread_job_offer_applications(@job).exists? %>
     <h3 class="text-center padding-bottom">List of new applicants</h3>
+  <% end %>
     <div class="row">
       <% unread_job_offer_applications(@job).each do |job_application| %>
         <div class="col-xs-12 col-md-4">
             <div class="card">
-            <% if job_application.employee.photo %>
+            <% if job_application.employee.photo.file %>
               <%= cl_image_tag(job_application.employee.photo, crop: :fill, class: 'card-img-top') %>
+            <% elsif job_application.employee.linkedin_photo_url %>
+              <%= cl_image_tag(job_application.employee.linkedin_photo_url, crop: :fill, class: 'card-img-top') %>
+            <% else %>
                 <% if job_application.employee.gender == "male" %>
-                  <%= image_tag ("fbppm.png") %>
+                  <%= image_tag ("fbppm.jpg") %>
                 <% else %>
                   <%= image_tag ("fbppf.jpg") %>
                 <% end %>
             <% end %>
               <div class="card-block">
                 <h2 class="card-title"><%= job_application.employee.first_name %> <%= job_application.employee.last_name %> </h2>
-                <h4 class="card-title"><%= job_application.job_offer.name %></h4>
-                <div class="meta">
+                <h4 class="card-title">
                 <% if job_application.employee.work_experiences.exists? %>
-                  <span><%= job_application.employee.work_experiences.industry %></span>
+                  <span><%= job_application.employee.work_experiences.last.industry %> industry</span>
                 <% end  %>
+                </h4>
+                <div class="meta">
+                  <% if job_application.employee.work_experiences.exists? %>
+                    <span><%= job_application.employee.work_experiences.last.experience %> years</span>
+                  <% end  %>
                 </div>
-                <%= link_to 'See profile', company_account_job_application_path(job_application.employee), class: 'btn btn-primary' %>
+                <%= link_to 'See profile', company_account_job_application_path(job_application), class: 'btn btn-primary' %>
               </div>
             </div>
         </div>
@@ -105,30 +114,35 @@
       <% read_job_offer_applications(@job).each do |job_application| %>
           <div class="col-xs-12 col-md-4">
               <div class="card">
-                <% if job_application.employee.photo %>
+                <% if job_application.employee.photo.file %>
                   <%= cl_image_tag(job_application.employee.photo, crop: :fill, class: 'card-img-top') %>
+                <% elsif job_application.employee.linkedin_photo_url %>
+                  <%= cl_image_tag(job_application.employee.linkedin_photo_url, crop: :fill, class: 'card-img-top') %>
                 <% else %>
                     <% if job_application.employee.gender == "male" %>
-                      <%= image_tag ("fbppm.png") %>
+                      <%= image_tag ("fbppm.jpg") %>
                     <% else %>
                       <%= image_tag ("fbppf.jpg") %>
                     <% end %>
                 <% end %>
               <div class="card-block">
                 <h2 class="card-title"><%= job_application.employee.first_name %> <%= job_application.employee.last_name %> </h2>
-                <h4 class="card-title"><%= job_application.job_offer.name %></h4>
+                <h4 class="card-title">
+                <% if job_application.employee.work_experiences.exists? %>
+                  <span><%= job_application.employee.work_experiences.last.industry %> industry</span>
+                <% end  %>
+                </h4>
                 <div class="meta">
-                <%# if job_application.employee.work_experiences.exists? %>
-                  <!-- <span><%#= job_application.employee.work_experiences.industry %></span> -->
-                <%# end  %>
+                  <% if job_application.employee.work_experiences.exists? %>
+                    <span><%= job_application.employee.work_experiences.last.experience %> years</span>
+                  <% end  %>
                 </div>
-                <%= link_to 'See profile', company_account_job_application_path(job_application.employee), class: 'btn btn-primary' %>
+                <%= link_to 'See profile', company_account_job_application_path(job_application), class: 'btn btn-primary' %>
               </div>
               </div>
           </div>
       <% end %>
     </div>
-
 </div>
 
 

@@ -246,3 +246,7 @@ $enable-rounded: true;
   @include border-bottom-radius($card-border-radius-inner);
 }
 
+
+.card > img {
+  width: 100%;
+}
