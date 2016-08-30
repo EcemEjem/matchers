@@ -1,67 +1,51 @@
-<!-- path: /contractor/account/profile/ -->
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(https://unsplash.it/1024/600/?job);">
+  <div class="banner-content">
+    <h2><%= current_employee.first_name %> <%= current_employee.last_name %></h2>
+    <div class="row">
 
-<div class="profile-wrapper anchor">
-  <div class="profile-information">
-    <div class="profile-image">
-      <% if current_employee.provider == 'linkedin' %>
-      <%= cl_image_tag current_employee.linkedin_photo_url, height: 200, width: 200, crop: :fill %>
-      <% else  %>
-      <%= cl_image_tag current_employee.photo, height: 200, width: 200, crop: :fill %>
-      <% end %>
-    </div>
-    <div class="profile-content">
-      <div class="profile-title">
-        <span><%= current_employee.first_name %> <%= current_employee.last_name %></span>
-        <%= link_to edit_contractor_account_profile_path do %>
-        <i class="fa fa-edit fa-2x"></i>
-        <% end %>
+      <div class="col-sm-4">
+        <div class="log-picture">
+          <% if current_employee.provider == 'linkedin' %>
+          <%= cl_image_tag current_employee.linkedin_photo_url, height: 200, width: 200, crop: :fill %>
+          <% else  %>
+          <%= cl_image_tag current_employee.photo, height: 200, width: 200, crop: :fill %>
+          <% end %>
+        </div>
       </div>
-      <div class="profile-location">
+      <div class="col-sm-4">
         <%= current_employee.location %>
+        <%= current_employee.age %>
+        <%= current_employee.gender %>
       </div>
-      <p><%= current_employee.age %></p>
-      <p><%= current_employee.gender %></p>
-
-      <div class="work-experiences">
-        <%#= link_to contractor_account_profile_path, method: :delete do %>
-        <!-- <i class="fa fa-trash-o fa-2x"></i> -->
-        <%# end %>
-        <p class="lead">
-          <%= link_to "Your Work Experience", contractor_account_work_experiences_path, method: :get, class:"btn btn-success" %>
-        </p>
+      <div class="col-sm-4">
+        <%= link_to "Your Work Experience", contractor_account_work_experiences_path, method: :get, class:"btn btn-primary btn-lg add-job-offer" %>
+        <%= link_to 'Edit my profile', edit_contractor_account_profile_path, class:"btn btn-default btn-lg add-job-offer" %>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- THERE SHOULD BE SOMETHING ABOUT A DATE HERE?????? -->
-    <!-- <div class="profile-extra-information">
-      <div class="profile-availability">
-        <%= current_employee.availability %>
-      </div>
-    </div> -->
-    <!-- UNTIL HERE?????? -->
-    <div class="job-applications">
-      <% @job_applications.each do |job_application| %>
-      <div class="job-application">
-        <% if job_application.status == "declined" %>
-        <i class="fa fa-times fa-2x red"></i>
-        <% elsif job_application.status == "accepted" %>
-        <i class="fa fa-check fa-2x green"></i>
-        <% else %>
-        <i class="fa fa-clock-o fa-2x"></i>
-        <% end %>
-        <div class="job-information">
-          <div class="company-name">
-            <%= job_application.job_offer.company.name %>
-          </div>
-          <div class="job-name">
-           <%= job_application.job_offer.name %>
+<div class="profile-wrapper anchor">
+  <% @job_applications.each do |job_application| %>
+    <div class="job-application">
+      <% if job_application.status == "declined" %>
+      <i class="fa fa-times fa-2x red"></i>
+      <% elsif job_application.status == "accepted" %>
+      <i class="fa fa-check fa-2x green"></i>
+      <% else %>
+      <i class="fa fa-clock-o fa-2x"></i>
+      <% end %>
+      <div class="job-information">
+        <h4 class="company-name">
+          <%= job_application.job_offer.company.name %>
+        </h4>
+        <p>
+          <%= job_application.job_offer.name %>
 
-           <% job_offer = job_application.job_offer %>
-           <%= link_to 'See job', contractor_job_path(job_offer)%>
-         </div>
-       </div>
+          <% job_offer = job_application.job_offer %>
+          — <em><%= link_to 'See job', contractor_job_path(job_offer)%></em>
+       </p>
      </div>
-     <% end %>
-   </div>
+    </div>
+  <% end %>
  </div>
