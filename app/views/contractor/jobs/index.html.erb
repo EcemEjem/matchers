@@ -17,6 +17,8 @@
                 <h4 class="card-title">Wage: <%= job.wage %> $ - <%= job.city %></h4>
                 <div class="meta"><%= job.start_date %> - <%= job.end_date %>
                 </div>
+                <div class="meta"><%= job.duration %> days
+                </div>
                 <%= link_to 'See job', contractor_job_path(job), class: 'btn btn-primary' %>
               </div>
             </div>

@@ -96,11 +96,18 @@ $enable-rounded: true;
   // border: $card-border-width solid $card-border-color;
   border-radius: 5px;
   border: $card-border-width solid $card-border-color;
+  position: relative;
+  a {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+  }
 }
 
 .card-block {
   @include clearfix;
   padding: $card-spacer-x;
+
 }
 
 .card-title {
