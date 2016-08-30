@@ -16,8 +16,8 @@ class Contractor::Account::WorkExperiencesController < Contractor::BaseControlle
   def create
     @work_experience = WorkExperience.new(work_experience_params)
     @work_experience.employee = current_employee
-    if @work_experience.save!
-      redirect_to contractor_account_work_experience_path(@work_experience)
+    if @work_experience.save
+      redirect_to contractor_account_work_experiences_path
     else
       render 'new'
     end

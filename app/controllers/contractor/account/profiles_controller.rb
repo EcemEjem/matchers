@@ -2,7 +2,7 @@ class Contractor::Account::ProfilesController < Contractor::BaseController
   before_action :set_profile
 
   def show
-    @job_applications = current_employee.job_applications
+    @job_applications = current_employee.job_applications.order('created_at DESC').limit(6)
   end
 
   def edit
