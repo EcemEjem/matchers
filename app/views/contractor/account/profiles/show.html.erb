@@ -55,6 +55,9 @@
         </div>
         <div class="job-name">
            <%= job_application.job_offer.name %>
+
+           <% job_offer = job_application.job_offer %>
+           <%= link_to 'See job', contractor_job_path(job_offer)%>
         </div>
         </div>
       </div>
