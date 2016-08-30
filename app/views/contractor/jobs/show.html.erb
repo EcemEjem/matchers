@@ -4,7 +4,13 @@
     <h3>
       <em><%=@job.start_date%> - <%=@job.end_date%></em>
     </h3>
-    <%= link_to "Apply now", new_contractor_job_job_application_path(@job), class: "btn btn-primary btn-lg" %>
+    <% if current_employee  %>
+      <% unless current_employee.job_applications.map(&:job_offer_id).include? @job.id  %>
+        <%= link_to "Apply now", new_contractor_job_job_application_path(@job), class: "btn btn-primary btn-lg" %>
+      <% end %>
+      <% else %>
+         <%= link_to "Apply now", new_contractor_job_job_application_path(@job), class: "btn btn-primary btn-lg" %>
+    <% end %>
   </div>
 </div>
 
@@ -67,9 +73,20 @@
             </div>
           </div>
           <hr>
+        <% if current_employee  %>
           <div class="text-center">
+                 <% unless current_employee.job_applications.map(&:job_offer_id).include? @job.id  %>
+
             <%= link_to "Apply now", new_contractor_job_job_application_path(@job), class: "btn btn-primary btn-lg" %>
+          <% else %>
+            <%= link_to "Back to my profile", contractor_account_profile_path, class: "btn btn-primary btn-lg" %>
+
+          <% end %>
           </div>
+          <% else %>
+                      <%= link_to "Apply now", new_contractor_job_job_application_path(@job), class: "btn btn-primary btn-lg" %>
+
+          <% end %>
         </div>
       </div>
       <div class="col-md-5 col-xs-12">

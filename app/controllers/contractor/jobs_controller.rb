@@ -11,6 +11,7 @@ class Contractor::JobsController < Contractor::BaseController
   end
 
   def show
+
     @job = JobOffer.find(params[:id])
     @job_coordinates = { lat:  @job.latitude, lng: @job.longitude }
 
