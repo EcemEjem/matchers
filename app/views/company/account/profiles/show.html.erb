@@ -48,7 +48,7 @@
 <!---------- ------- job offers cards -------------------->
   <div class="row anchor">
     <div class="bootstrap-demo">
-      <% current_company.job_offers.each do |job_offer| %>
+      <%  @job_offers.each do |job_offer| %>
         <div class="col-xs-12 col-sm-4">
           <div class="card">
             <%= job_offer.photo.present? ? cl_image_tag(job_offer.photo, class:"card-img-top", height: 194, width: 323, crop: :fill) : image_tag('01_city.jpg') %>
