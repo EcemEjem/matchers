@@ -11,27 +11,26 @@
     </div>
     <div class="profile-content">
       <span><%= current_employee.first_name %> <%= current_employee.last_name %></span>
+      <%= link_to edit_contractor_account_profile_path do %>
+        <i class="fa fa-edit fa-2x"></i>
+        <% end %>
       <div class="profile-location">
         <%= current_employee.location %>
       </div>
       <p><%= current_employee.age %></p>
       <p><%= current_employee.gender %></p>
 
-      <div class="actions">
+    <div class="work-experiences">
         <%#= link_to contractor_account_profile_path, method: :delete do %>
         <!-- <i class="fa fa-trash-o fa-2x"></i> -->
         <%# end %>
-        <%= link_to new_contractor_account_work_experience_path do %>
-        <p>
-          Work experience
-        </p>
-        <% end %>
-        <%= link_to edit_contractor_account_profile_path do %>
-        <i class="fa fa-edit fa-2x"></i>
-        <% end %>
+      <p class="lead">
+          <%= link_to "Your Work Experience", contractor_account_work_experiences_path, method: :get, class:"btn btn-primary btn-sm" %>
+      </p>
       </div>
     </div>
   </div>
+
   <!-- THERE SHOULD BE SOMETHING ABOUT A DATE HERE?????? -->
     <!-- <div class="profile-extra-information">
       <div class="profile-availability">
