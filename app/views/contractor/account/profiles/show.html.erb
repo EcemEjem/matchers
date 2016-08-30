@@ -40,7 +40,7 @@
     </div> -->
     <!-- UNTIL HERE?????? -->
     <div class="job-applications">
-      <% current_employee.job_applications.each do |job_application| %>
+      <% @job_applications.each do |job_application| %>
       <div class="job-application">
         <% if job_application.status == "declined" %>
         <i class="fa fa-times fa-2x red"></i>
