@@ -46,11 +46,19 @@
         </li>
         <% end %>
         <% if employee_signed_in? || company_signed_in? %>
+         <% if employee_signed_in? %>
         <li>
           <%= link_to contractor_account_profile_path do  %>
           <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
           <% end %>
         </li>
+        <% else %>
+        <li>
+          <%= link_to company_account_profile_path do  %>
+          <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+          <% end %>
+        </li>
+        <% end %>
         <% else %>
         <% unless params[:controller] == "devise/sessions" && params[:action] == "new" %>
   <% if (params[:controller] == "pages" && params[:action] == "company")|| params[:controller] == "devise/registrations" %>

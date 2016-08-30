@@ -3,30 +3,32 @@
 <div class="profile-wrapper anchor">
   <div class="profile-information">
     <div class="profile-image">
-    <% if current_employee.provider == 'linkedin' %>
-        <%= cl_image_tag current_employee.linkedin_photo_url, height: 200, width: 200, crop: :fill %>
+      <% if current_employee.provider == 'linkedin' %>
+      <%= cl_image_tag current_employee.linkedin_photo_url, height: 200, width: 200, crop: :fill %>
       <% else  %>
-        <%= cl_image_tag current_employee.photo, height: 200, width: 200, crop: :fill %>
-    <% end %>
+      <%= cl_image_tag current_employee.photo, height: 200, width: 200, crop: :fill %>
+      <% end %>
     </div>
     <div class="profile-content">
-      <span><%= current_employee.first_name %> <%= current_employee.last_name %></span>
-      <%= link_to edit_contractor_account_profile_path do %>
+      <div class="profile-title">
+        <span><%= current_employee.first_name %> <%= current_employee.last_name %></span>
+        <%= link_to edit_contractor_account_profile_path do %>
         <i class="fa fa-edit fa-2x"></i>
         <% end %>
+      </div>
       <div class="profile-location">
         <%= current_employee.location %>
       </div>
       <p><%= current_employee.age %></p>
       <p><%= current_employee.gender %></p>
 
-    <div class="work-experiences">
+      <div class="work-experiences">
         <%#= link_to contractor_account_profile_path, method: :delete do %>
         <!-- <i class="fa fa-trash-o fa-2x"></i> -->
         <%# end %>
-      <p class="lead">
-          <%= link_to "Your Work Experience", contractor_account_work_experiences_path, method: :get, class:"btn btn-primary btn-sm" %>
-      </p>
+        <p class="lead">
+          <%= link_to "Your Work Experience", contractor_account_work_experiences_path, method: :get, class:"btn btn-success" %>
+        </p>
       </div>
     </div>
   </div>
@@ -49,17 +51,17 @@
         <i class="fa fa-clock-o fa-2x"></i>
         <% end %>
         <div class="job-information">
-        <div class="company-name">
-        <%= job_application.job_offer.company.name %>
-        </div>
-        <div class="job-name">
+          <div class="company-name">
+            <%= job_application.job_offer.company.name %>
+          </div>
+          <div class="job-name">
            <%= job_application.job_offer.name %>
 
            <% job_offer = job_application.job_offer %>
            <%= link_to 'See job', contractor_job_path(job_offer)%>
-        </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
+         </div>
+       </div>
+     </div>
+     <% end %>
+   </div>
+ </div>
