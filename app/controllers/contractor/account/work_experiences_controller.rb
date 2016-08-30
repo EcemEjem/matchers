@@ -2,7 +2,7 @@ class Contractor::Account::WorkExperiencesController < Contractor::BaseControlle
   before_action :set_work_experience, only: [:show, :edit, :update, :destroy]
 
   def index
-    @work_experiences = WorkExperience.all
+    @work_experiences = WorkExperience.order(created_at: :desc)
   end
 
   def show
@@ -28,7 +28,7 @@ class Contractor::Account::WorkExperiencesController < Contractor::BaseControlle
 
   def update
     if @work_experience.update(work_experience_params)
-      redirect_to contractor_account_work_experience_path(work_experience)
+      redirect_to contractor_account_work_experiences_path
     else
       render 'edit'
     end
