@@ -1,6 +1,9 @@
-<div id="employee-bg"></div>
+<div class="wrapper-yellow"  style="background-color: #C63D0F ;">
+    <h3 style="color:white;">
+    Add your work experience and let the company to know about you</h3>
+</div>
+<div class="contenair" style="background-color:#FDF3E7;">
   <%= simple_form_for @work_experience, url: contractor_account_work_experiences_path, class:"panel panel-default" do |f| %>
-    <h1 style="color:white">Add your work experience and let the company to know about you</h1>
     <%= f.input :industry %>
     <%= f.input :experience %>
     <%= f.input :company %>

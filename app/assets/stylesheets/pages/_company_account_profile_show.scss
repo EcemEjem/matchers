@@ -34,3 +34,24 @@
   background-color: slategray;
   border-color: slategrey;
 }
+.wrapper-yellow {
+
+    position:relative;
+    background-color:#659EC7;
+    height:100px !important;
+    width:100% !important;
+}
+.wrapper-yellow:after {
+    z-index: -1;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -410px;
+    content:'';
+    width: 0;
+    height: 0;
+    border-top: solid 180px #659EC7;
+    border-left: solid 410px transparent;
+    border-right: solid 410px transparent;
+}
+
