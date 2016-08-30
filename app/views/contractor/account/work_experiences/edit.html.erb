@@ -1,13 +1,30 @@
-<div id="employee-bg"></div>
-  <%= simple_form_for @work_experience, url: contractor_account_work_experiences_path(@work_experience), method: :post, class:"panel panel-default" do |f| %>
-    <h1 style="color:white">Edit your work experience</h1>
-    <%= f.input :industry %>
-    <%= f.input :experience %>
-    <%= f.input :company %>
-    <%= f.input :title %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :description %>
-    <%= f.submit %>
-  <% end %>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(https://unsplash.it/1024/600/?job);">
+  <div class="banner-content">
+    <h2>Add a new work experience</h2>
+    <h3>
+      <em>*****</em>
+    </h3>
+  </div>
+</div>
+
+<div class="wrapper-grey">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-7 col-xs-12">
+        <div class="box2">
+          <%= simple_form_for @work_experience, url: contractor_account_work_experience_path(@work_experience), method: :put, class:"panel panel-default" do |f| %>
+            <%= f.input :industry %>
+            <%= f.input :experience %>
+            <%= f.input :company %>
+            <%= f.input :title %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+            <%= f.input :description %>
+            <%= f.submit %>
+          <% end %>
+        </div>     
+      </div>
+    </div>
+  </div>
 </div>

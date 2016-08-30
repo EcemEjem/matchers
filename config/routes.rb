@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
     namespace :account do
       resource :profile, only: [:show, :edit, :update]
-      resources :work_experiences, only: [:index, :new, :create, :show, :edit]
+      resources :work_experiences, only: [:index, :new, :create, :show, :edit, :update]
       resources :job_applications, only: [:index]
     end
 
