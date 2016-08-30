@@ -5,21 +5,13 @@
 }
 /*-------account profile photo -----------------------------*/
 .log-picture {
-  position: absolute;
   display: flex;
-  margin-top: 25px;
-  margin-left: 10px;
-  -webkit-box-pack: center;
-  box-shadow: 1px 1px 1px rgba(1,1,1,0.3);
 }
 /*------- button to add new job offer----------------------*/
 .add-job-offer {
-  position: absolute;
   display: flex;
   margin-top: 50px;
   margin-left: 50px;
-  background-color: slategray;
-  border-color: slategrey;
 }
 /*------- job offer CARDS----------------------------------*/
 .bootstrap-demo {
@@ -34,24 +26,3 @@
   background-color: slategray;
   border-color: slategrey;
 }
-.wrapper-yellow {
-
-    position:relative;
-    background-color:#659EC7;
-    height:100px !important;
-    width:100% !important;
-}
-.wrapper-yellow:after {
-    z-index: -1;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -410px;
-    content:'';
-    width: 0;
-    height: 0;
-    border-top: solid 180px #659EC7;
-    border-left: solid 410px transparent;
-    border-right: solid 410px transparent;
-}
-
