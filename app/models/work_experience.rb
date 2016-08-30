@@ -1,13 +1,13 @@
 class WorkExperience < ApplicationRecord
   belongs_to :employee
 
-  validates :industry,    presence: true, on: :update
-  validates :experience,  presence: true, on: :update
-  validates :company,     presence: true, on: :update
-  validates :title,       presence: true, on: :update
-  validates :description, presence: true, on: :update
-  validates :start_date,  presence: true, on: :update
-  validates :end_date,    presence: true, on: :update
+  validates :industry,    presence: true
+  validates :experience,  presence: true
+  validates :company,     presence: true
+  validates :title,       presence: true
+  validates :description, presence: true
+  validates :start_date,  presence: true
+  validates :end_date,    presence: true
 
   def duration
     if self.end_date && self.start_date
