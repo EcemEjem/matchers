@@ -12,5 +12,11 @@ class JobOffer < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
-
+  def duration
+    if self.end_date && self.start_date
+      ( self.end_date - self.start_date ).to_i
+    else
+      0
+    end
+  end
 end
