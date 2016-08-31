@@ -13,4 +13,5 @@ class Company < ApplicationRecord
   validates :name,         presence: true, on: :update
   validates :industry,     presence: true, on: :update
   validates :description,  presence: true, on: :update
+  validates :photo,        presence: true, on: :update
 end
