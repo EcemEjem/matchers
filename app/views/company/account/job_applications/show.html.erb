@@ -10,6 +10,9 @@
         <hr class="m-y-2">
         <p><%= @job_application.motivation_letter %></p>
       </div>
+        <div class="col-sm-4">
+          <p> <%= link_to "Back", company_account_job_path(@job), class: "btn  btn-primary btn-lg add-job-offer" %></p>
+        </div>
 
       <% if @job_application.status == "Pending"  %>
         <div class="application-status-actions">

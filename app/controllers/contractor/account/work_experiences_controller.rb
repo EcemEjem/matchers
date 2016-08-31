@@ -2,7 +2,7 @@ class Contractor::Account::WorkExperiencesController < Contractor::BaseControlle
   before_action :set_work_experience, only: [:show, :edit, :update, :destroy]
 
   def index
-    @work_experiences = WorkExperience.order(created_at: :desc)
+    @work_experiences = WorkExperience.where(employee_id: current_employee.id).order(created_at: :desc)
   end
 
   def show
