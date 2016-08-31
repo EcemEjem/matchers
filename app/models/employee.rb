@@ -17,6 +17,7 @@ class Employee < ApplicationRecord
   validates :last_name,      presence: true, on: :update
   validates :gender,         presence: true, on: :update
   validates :age,            presence: true, on: :update
+  validates :photo,          presence: true, on: :update
 
   validates_format_of :email, without: TEMP_EMAIL_REGEX, on: :update
 
