@@ -1,6 +1,10 @@
 $enable-rounded: true;
 
 // Single side border-radius
+//
+.card-smaller {
+  height: 420px !important;
+}
 
 @mixin border-radius($radius: $border-radius) {
   @if $enable-rounded {

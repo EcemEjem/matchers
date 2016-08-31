@@ -83,7 +83,7 @@
         <h3 class="text-center anchor">Suggested Employee for you <%= current_company.industry %></h3>
           <% @suggested_employees.each do |suggested_employee| %>
             <div class="col-xs-12 col-sm-4">
-              <div class="card">
+              <div class="card card-smaller">
                 <% if suggested_employee.provider == 'linkedin' %>
                   <%= cl_image_tag suggested_employee.linkedin_photo_url, crop: :fill %>
                 <% else  %>

@@ -16,24 +16,7 @@
 
       <ul class='nav navbar-nav navbar-right'>
 
-        <% if employee_signed_in? || company_signed_in? %>
-          <% if employee_signed_in? %>
 
-            <li>
-              <%= link_to destroy_employee_session_path, method: :delete do %>
-                <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-
-            <% else %>
-
-            <li>
-              <%= link_to destroy_company_session_path, method: :delete do %>
-                <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          <% end %>
-        <% end %>
 
         <% unless params[:controller] == "pages" && params[:action] == "home" %>
         <% unless current_employee.nil? || current_company.nil?  %>
@@ -68,13 +51,12 @@
         </li>
         <% end %>
         <% else %>
-        <% unless params[:controller] == "devise/sessions" && params[:action] == "new" %>
   <% if (params[:controller] == "pages" && params[:action] == "company")|| params[:controller] == "company/registrations" %>
 
         <li>
           <%= link_to t(".sign_in", default: "Login"), new_company_session_path %>
         </li>
-        <% else %>
+        <% elsif (params[:controller] == "pages" && params[:action] == "company")|| params[:controller] == "employee/registrations" %>
 
         <li>
           <%= link_to t(".sign_in", default: "Login"), new_employee_session_path %>
@@ -82,9 +64,26 @@
 
   <% end %>
         <% end %>
+      <% end %>
+       <% if employee_signed_in? || company_signed_in? %>
+          <% if employee_signed_in? %>
+
+            <li>
+              <%= link_to destroy_employee_session_path, method: :delete do %>
+                <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+
+            <% else %>
+
+            <li>
+              <%= link_to destroy_company_session_path, method: :delete do %>
+                <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          <% end %>
         <% end %>
       </ul>
-      <% end %>
     </div>
   </div>
 </nav>
