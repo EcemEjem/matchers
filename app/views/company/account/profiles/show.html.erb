@@ -78,30 +78,33 @@
 
   <!---------- suggested_employee--------------  ---------->
   <% unless @suggested_employees.empty? %>
-  <div class="row">
-    <div class="bootstrap-demo">
-      <h4 class="text-center">Suggested Employee for you <%= current_company.industry %></h4>
+    <div class="row ">
+      <div class="bootstrap-demo">
+        <h3 class="text-center anchor">Suggested Employee for you <%= current_company.industry %></h3>
           <% @suggested_employees.each do |suggested_employee| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card">
-          <% if suggested_employee.provider == 'linkedin' %>
-          <%= cl_image_tag suggested_employee.linkedin_photo_url, crop: :fill %>
-          <% else  %>
-          <%= cl_image_tag suggested_employee.photo, crop: :fill %>
-          <% end %>
-          <div class="card-block">
-            <div class="card-title">
-              Name: <%= suggested_employee.first_name %>
+            <div class="col-xs-12 col-sm-4">
+              <div class="card">
+                <% if suggested_employee.provider == 'linkedin' %>
+                  <%= cl_image_tag suggested_employee.linkedin_photo_url, crop: :fill %>
+                <% else  %>
+                  <%= cl_image_tag suggested_employee.photo, crop: :fill %>
+                <% end %>
+                <div class="card-block">
+                  <div class="card-title">
+                    Name: <%= suggested_employee.first_name %>
+                  </div>
+                  <h4 class="card-text">
+                    Industry: <%= @industry[0] %>
+                   </h4>
+                   <p>
+                    <%#= link_to 'See profile', company_account_job_applications_path(job_applications), class: 'btn btn-primary' %>
+                   </p>
+                </div>
+              </div>
             </div>
-            <h4 class="card-text">
-              Industry: <%= @industry[0] %>
-            <%#= link_to "#{suggested_employee.first_name} #{suggested_employee.last_name}", class: "btn btn-primary btn-lg" %></h4>
-          </div>
-        </div>
+          <% end %>
       </div>
-      <% end %>
-    </div>
     </div>
   <% end %>
-  </div>
+</div>
 
