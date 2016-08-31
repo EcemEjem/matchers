@@ -5,6 +5,12 @@ class Company::Account::ProfilesController < Company::BaseController
     @job_offers = current_company.job_offers.order(created_at: :desc).limit(3)
     @job_applications = current_company.job_applications.order(created_at: :desc)
     get_suggested_employees
+    @industry = []
+    @suggested_employees.each do |suggested_employee|
+      suggested_employee.work_experiences.each do |work|
+          @industry << work.industry
+       end
+     end
   end
 
   def edit

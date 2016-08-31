@@ -1,100 +1,107 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(https://unsplash.it/1024/600/?job);">
   <div class="banner-content">
     <h2>Welcome <%= current_company.name %> to your company profile</h2>
-    <div class="row">
-
-      <div class="col-sm-4">
-        <div class="log-picture">
-          <%= image_tag current_company.photo, height: 200, width: 200 %>
-        </div>
-      </div>
-
-      <div class="col-sm-4">
-        <table class="table">
-          <tbody>
-            <tr>
-              <th>PROFILE DETAILS</th>
-            </tr>
-            <tr>
-              <td><em>Name:</em></td>
-              <td><%= current_company.name %></td>
-            </tr>
-            <tr>
-              <td><em>Industry:</em></td>
-              <td><%= current_company.industry %></td>
-            </tr>
-            <tr>
-              <td><em>Description:</em></td>
-              <td><%= current_company.description %></td>
-            </tr>
-            <tr>
-              <td>Edit your profile:</td>
-              <td><em><%= link_to 'Edit', edit_company_account_profile_path(@job), class: "btn btn-secondary", id: "edit-button", style:"text-decoration:none" %></em></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-sm-4">
-        <div class="add-job-offer">
-          <%= link_to "Add Job Offer",new_company_account_job_path, class: "btn btn-primary btn-lg add-job-offer" %>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
-<div class="container">
-<!---------- ------- job offers cards -------------------->
+<div class="container anchor">
+  <div class="row">
+
+    <div class="col-sm-4">
+      <div class="log-picture">
+        <%= image_tag current_company.photo, height: 200, width: 200 %>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>PROFILE DETAILS</th>
+          </tr>
+          <tr>
+            <td><em>Name:</em></td>
+            <td><%= current_company.name %></td>
+          </tr>
+          <tr>
+            <td><em>Industry:</em></td>
+            <td><%= current_company.industry %></td>
+          </tr>
+          <tr>
+            <td><em>Description:</em></td>
+            <td><%= current_company.description %></td>
+          </tr>
+          <tr>
+            <td>Edit your profile:</td>
+            <td><em><%= link_to 'Edit', edit_company_account_profile_path(@job), class: "btn btn-secondary", id: "edit-button", style:"text-decoration:none" %></em></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-4">
+      <div>
+        <ul class="list-unstyled">
+          <li>
+            <%= link_to "Add Job Offer",new_company_account_job_path, class: "btn btn-block btn-primary btn-lg  add-job-offer" %>
+          </li>
+          <li>
+            <%= link_to "See all offers", company_account_jobs_path, class: "btn btn-default  btn-primary btn-lg add-job-offer" %>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!---------- ------- job offers cards -------------------->
   <div class="row">
     <div class="bootstrap-demo">
       <%  @job_offers.each do |job_offer| %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card">
-            <%= job_offer.photo.present? ? cl_image_tag(job_offer.photo, class:"card-img-top", height: 194, width: 323, crop: :fill) : image_tag('01_city.jpg') %>
-            <div class="card-block">
-              <%= link_to "See Applicants", company_account_job_path(job_offer), class: "card-link"%>
-            </div>
-            <div class="card-block">
-              <h4 class="card-title">Position: <%= job_offer.name %></h4>
-              <p class="card-text">City: <%= job_offer.city %></p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"><%= unread_job_offer_applications_count(job_offer) %> New Applicants</li>
-              <li class="list-group-item"><%= job_offer.job_applications.count %> Applicants</li>
-            </ul>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <%= job_offer.photo.present? ? cl_image_tag(job_offer.photo, class:"card-img-top", height: 194, width: 323, crop: :fill) : image_tag('01_city.jpg') %>
+          <div class="card-block">
+            <%= link_to "See Applicants", company_account_job_path(job_offer), class: "card-link btn btn-primary btn-padding"%>
+
+            <h4 class="card-title">Position: <%= job_offer.name %></h4>
+            <p class="card-text">City: <%= job_offer.city %></p>
           </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= unread_job_offer_applications_count(job_offer) %> New Applicants</li>
+            <li class="list-group-item"><%= job_offer.job_applications.count %> Applicants</li>
+          </ul>
         </div>
+      </div>
       <% end %>
     </div>
   </div>
-<!---------- ------- See all jobs offer cards -------------------->
-  <div class="row anchor text-center">
-    <div class="col-xs-12">
-      <%= link_to "See all offers", company_account_jobs_path, class: "btn btn-primary btn-lg see-all-offers" %>
-    </div>
-  </div>
 
-<!---------- suggested_employee--------------  ---------->
-<% unless @suggested_employees.empty? %>
-
-  <div class="suggested_employee anchor">
-    <h4>Suggested Employee for you <%= current_company.industry %></h4>
-  </div>
+  <!---------- suggested_employee--------------  ---------->
+  <% unless @suggested_employees.empty? %>
   <div class="row">
-    <% @suggested_employees.each do |suggested_employee| %>
-
-
-      <div class="col-xs-12 col-sm-6 col-md-3" >
-        <div class="suggested-employee-avatar">
+    <div class="bootstrap-demo">
+      <h4 class="text-center">Suggested Employee for you <%= current_company.industry %></h4>
+          <% @suggested_employees.each do |suggested_employee| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
           <% if suggested_employee.provider == 'linkedin' %>
-            <%= cl_image_tag suggested_employee.linkedin_photo_url, height: 100, width: 100, crop: :fill %>
+          <%= cl_image_tag suggested_employee.linkedin_photo_url, crop: :fill %>
           <% else  %>
-            <%= cl_image_tag suggested_employee.photo, height: 100, width: 100, crop: :fill %>
+          <%= cl_image_tag suggested_employee.photo, crop: :fill %>
           <% end %>
+          <div class="card-block">
+            <div class="card-title">
+              Name: <%= suggested_employee.first_name %>
+            </div>
+            <h4 class="card-text">
+              Industry: <%= @industry[0] %>
+            <%#= link_to "#{suggested_employee.first_name} #{suggested_employee.last_name}", class: "btn btn-primary btn-lg" %></h4>
+          </div>
         </div>
-        <%= link_to "#{suggested_employee.first_name} #{suggested_employee.last_name}", class: "btn btn-primary btn-lg"  %>
       </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+    </div>
   <% end %>
-</div>
+  </div>
+
