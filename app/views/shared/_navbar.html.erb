@@ -16,6 +16,11 @@
 
       <ul class='nav navbar-nav navbar-right'>
 
+<% if current_employee.nil? && current_company.nil? %>
+  <li><%= link_to 'Sign in as a employee', new_employee_session_path %></li>
+  <li><%= link_to 'Sign in as a Company', new_company_session_path %></li>
+<% end %>
+
 
 
         <% unless params[:controller] == "pages" && params[:action] == "home" %>
@@ -54,12 +59,12 @@
   <% if (params[:controller] == "pages" && params[:action] == "company")|| params[:controller] == "company/registrations" %>
 
         <li>
-          <%= link_to t(".sign_in", default: "Login"), new_company_session_path %>
+          <%#= link_to t(".sign_in", default: "Login"), new_company_session_path %>
         </li>
         <% elsif (params[:controller] == "pages" && params[:action] == "company")|| params[:controller] == "employee/registrations" %>
 
         <li>
-          <%= link_to t(".sign_in", default: "Login"), new_employee_session_path %>
+          <%#= link_to t(".sign_in", default: "Login"), new_employee_session_path %>
         </li>
 
   <% end %>
