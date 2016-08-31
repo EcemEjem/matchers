@@ -8,12 +8,10 @@
         </div>
         <p class="lead"> An application for <%= @job_application.job_offer.company.name %>, to the position of <%= @job_application.job_offer.name %></p>
         <hr class="m-y-2">
-        <p><%= @job_application.motivation_letter %></p>
-      </div>
-        <div class="col-sm-4">
-          <p> <%= link_to "Back", company_account_job_path(@job), class: "btn  btn-primary btn-lg add-job-offer" %></p>
-        </div>
+        <p>
+        <%= @job_application.motivation_letter %> <%= link_to "Back", company_account_job_path(@job), class: "btn btn-primary text-center" %></p>
 
+      </div>
       <% if @job_application.status == "Pending"  %>
         <div class="application-status-actions">
         <p class="lead">
