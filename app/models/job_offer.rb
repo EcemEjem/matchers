@@ -19,4 +19,5 @@ class JobOffer < ApplicationRecord
       0
     end
   end
+
 end

@@ -11,9 +11,9 @@ class WorkExperience < ApplicationRecord
 
   def duration
     if self.end_date && self.start_date
-    (( self.end_date - self.start_date ).to_i / 365 )
-  else
-    0
-  end
+      (( self.end_date - self.start_date ).to_i / 365 )
+    else
+      0
+    end
   end
 end
