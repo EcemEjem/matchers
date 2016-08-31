@@ -1,5 +1,29 @@
-<h1 class="anchor">HERE you will see all the job offers</h1>
-<p>here you have access to @jobs</p>
-<% @jobs.each do |job| %>
-    <%= job.name %>
-<% end %>
+<div class="container">
+    <div class="row anchor text-center">
+    <div class="col-xs-12">
+      <%= link_to "Back", company_account_profile_path, class: "btn btn-primary btn-lg see-all-offers" %>
+    </div>
+  </div>
+  <div class="row anchor">
+  <h2>List of all your jobs offer</h2>
+      <div class="bootstrap-demo">
+        <%  @jobs.each do |job| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card">
+              <%= job.photo.present? ? cl_image_tag(job.photo, class:"card-img-top", height: 194, width: 323, crop: :fill) : image_tag('01_city.jpg') %>
+              <div class="card-block">
+                <%= link_to "See Applicants", company_account_job_path(job), class: "card-link"%>
+              </div>
+              <div class="card-block">
+                <h4 class="card-title">Position: <%= job.name %></h4>
+                <p class="card-text">City: <%= job.city %></p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><%= job.job_applications.count %> Applicants</li>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</div>
