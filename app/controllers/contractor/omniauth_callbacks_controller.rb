@@ -10,7 +10,7 @@ class Contractor::OmniauthCallbacksController < Devise::OmniauthCallbacksControl
       auth.delete("extra")
 
       session['devise.linkedin_data'] = auth
-      redirect_to new_employee_registration_path #need to change the path
+      redirect_to new_employee_registration_path
     end
   end
 end
