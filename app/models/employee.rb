@@ -62,10 +62,11 @@ class Employee < ApplicationRecord
   end
 
   private
-
-  def send_welcome_email
-    EmployeeMailer.welcome(self).deliver_now
-  end
+  #commented out for the demo
+  #
+  # def send_welcome_email
+  #   EmployeeMailer.welcome(self).deliver_now
+  # end
 
 end
 
