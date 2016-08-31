@@ -4,7 +4,6 @@ class Company::Account::JobApplicationsController < Company::BaseController
     @job_application = JobApplication.find(params[:id])
     @job_application.read_at = Time.now
     @job_application.save!
-    @job = @job_application.job_offer
   end
 
   def accept
