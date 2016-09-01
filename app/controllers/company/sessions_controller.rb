@@ -5,6 +5,6 @@ class Company::SessionsController < Devise::SessionsController
   end
 
   #def after_sign_out_path_for(resource)
-
+  # add path here for after company sign out
   #end
 end
