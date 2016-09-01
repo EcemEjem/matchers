@@ -36,15 +36,16 @@ class Company::Account::ProfilesController < Company::BaseController
   end
 
   def get_suggested_employees
-    @suggested_employees = []
-    Employee.all.each do |employee|
-      employee.work_experiences.each do |work_experience|
-        if work_experience.industry == current_company.industry
-          @suggested_employees << employee
-        end
-      end
-    end
-   @suggested_employees = @suggested_employees.uniq
+   #  @suggested_employees = []
+   #  Employee.all.each do |employee|
+   #    employee.work_experiences.each do |work_experience|
+   #      if work_experience.industry == current_company.industry
+   #        @suggested_employees << employee
+   #      end
+   #    end
+   #  end
+   # @suggested_employees = @suggested_employees.uniq
+   @suggested_employees = Employee.all.select { |employee| employee.first_name != "Hey"}
   end
 end
 
