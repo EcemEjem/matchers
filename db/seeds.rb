@@ -124,7 +124,7 @@ job = JobOffer.create!(
   city: 'Frankfurt',
   start_date: Date.new(2016, 5, 3),
   end_date: Date.new(2017, 9, 17),
-  job_description: 'As a sales representative you would sell your company’s products or services. If you ve got good people skills, and are good at persuading and negotiating, being a sales representative might be a job you would enjoy.',
+  job_description: 'As a sales associate, you will do sales as well as networking with potential clients. During the tradeshow, you will target B2B companies mainly based in the US and in East Asia. Patience, persuasiveness and attentiveness are a must for the position.',
   address: 'Frankfurt Exhibition Center, Ludwig-Erhard-Anlage 1 60327 Frankfurt a. M., Germany',
   wage: 13,
   company: company_amoy,
