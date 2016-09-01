@@ -150,13 +150,66 @@ employee_heyjude = Employee.create!(
 
 work_experience = WorkExperience.create!(
   employee_id: employee_heyjude.id,
-  industry: 'Sales',
+  industry:'Fashion',
   experience: 3,
-  company: 'Swarovski',
+  company:'Swarovski',
   title: 'Sales Associate',
   description: 'Increased sales by 20%.',
-  start_date: '2013-09-09',
+  start_date: '2014-09-09',
   end_date: '2016-09-09'
 )
 
+work_experience = WorkExperience.create!(
+  employee_id: employee_heyjude.id,
+  industry:'Modeling',
+  experience: 5,
+  company:'Urban Co',
+  title: 'Catalog Model',
+  description: 'Modeled for different brand lines for catalog shoots.',
+  start_date: '2012-01-17',
+  end_date: '2016-01-20'
+)
 
+work_experience = WorkExperience.create!(
+  employee_id: employee_heyjude.id,
+  industry:'Translation and languages',
+  experience: 2,
+  company:'Independent',
+  title: 'Translator',
+  description: 'Independent, freelance translator of Cantonese to English for various businesses.',
+  start_date: '2015-01-17',
+  end_date: '2016-01-20'
+)
+
+work_experience = WorkExperience.create!(
+  employee_id: employee_heyjude.id,
+  industry:'Fashion',
+  experience: 3,
+  company:'Pandora',
+  title: 'Sales Assistant',
+  description: 'Assisted in B2B wholesale marketing and sales.',
+  start_date: '2012-09-09',
+  end_date: '2013-09-09'
+)
+
+work_experience = WorkExperience.create!(
+  employee_id: employee_heyjude.id,
+  industry:'Modeling',
+  experience: 5,
+  company:'Coast',
+  title: 'Catalog Model',
+  description: 'Catwalk model.',
+  start_date: '2011-01-17',
+  end_date: '2012-01-20'
+)
+
+work_experience = WorkExperience.create!(
+  employee_id: employee_heyjude.id,
+  industry:'Translation and languages',
+  experience: 2,
+  company:'Park & Choi Manufacturing',
+  title: 'Translator',
+  description: 'Independent, freelance translator.',
+  start_date: '2014-01-17',
+  end_date: '2015-01-20'
+)
