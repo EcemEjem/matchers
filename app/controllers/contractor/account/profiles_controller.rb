@@ -12,7 +12,7 @@ class Contractor::Account::ProfilesController < Contractor::BaseController
     if @profile.update(profile_params)
       redirect_to contractor_account_profile_path
     else
-      flash[:alert] = "Fill all the required fields"
+      flash[:alert1] = "Fill all the required fields"
       render :edit
     end
   end
