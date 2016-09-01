@@ -169,7 +169,7 @@ employee_charles = Employee.create!(
   gender: 'M',
   location: 'Brussels',
   availability: 10,
-  photo: File.open(Rails.root.join("db/fixtures/images/suggested_charles.jpg"))
+  photo: File.open(Rails.root.join("db/fixtures/images/suggested_charles.JPG"))
 )
 
 employee_ecem = Employee.create!(
