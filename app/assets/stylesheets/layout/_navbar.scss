@@ -12,4 +12,9 @@ button {
 
 .navbar {
   margin-bottom: 0px;
- }
+}
+
+.navbar-brand {
+  font-family: $header-font;
+  font-weight: bold;
+}

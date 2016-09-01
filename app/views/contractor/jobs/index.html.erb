@@ -1,11 +1,15 @@
+<div class="row anchor text-center">
+  <div class="col-xs-12">
+    <%= link_to "Back", contractor_root_path, class: "btn btn-primary btn-lg see-all-offers" %>
+  </div>
+</div>
 <h2 class="anchor text-center">Job Opportunities</h2>
 <% if params[:location].present?%>
   <h4 class="text-center padding-bottom"><%= params[:location] %></h4>
 <% else %>
   <h4 class="text-center padding-bottom"> All Locations and Dates </h4>
 <% end %>
-<p class="text-center"><em><%= link_to contractor_root_path do %><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
-      <% end %></em></p>
+
 
 <div class="container">
   <div class="margin_top_40">
@@ -19,8 +23,12 @@
                 <h4 class="card-title">Wage: <%= job.wage %> $ - <%= job.city %></h4>
                 <div class="meta"><%= job.start_date %> - <%= job.end_date %>
                 </div>
-                <div class="meta"><%= job.duration %> days
+                <div class="meta">
+                  <%= job.duration %> days
                 </div>
+                <br>
+                <br>
+                <br>
                 <%= link_to 'See job', contractor_job_path(job), class: 'btn btn-primary' %>
               </div>
             </div>

@@ -1,7 +1,5 @@
 $enable-rounded: true;
 
-// Single side border-radius
-//
 .card-smaller {
   height: 420px !important;
 }
@@ -100,16 +98,14 @@ $enable-rounded: true;
 
 .card {
   margin-top: 40px;
-  width:325px;
-  height: 590px;
+  // width: 325px;
+  // height: 590px;
   position: relative;
   display: block;
   margin-bottom: $card-spacer-y;
   background-color: $card-bg;
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
-   //border: $card-border-width solid $card-border-color;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
   border-radius: 5px;
-  //border: $card-border-width solid $card-border-color;
   position: relative;
   transition: all 300ms ease;
   a {
@@ -117,11 +113,10 @@ $enable-rounded: true;
     bottom: 15px;
     left: 15px;
   }
-
 }
 
 .card:hover {
-  box-shadow:0 17px 50px 0 rgba(0,0,0,.19),0 12px 15px 0 rgba(0,0,0,.24);
+  box-shadow: 0 17px 50px 0 rgba(0,0,0,.19),0 12px 15px 0 rgba(0,0,0,.24);
 }
 
 .card-block {
@@ -142,14 +137,6 @@ $enable-rounded: true;
 .card-text:last-child {
   margin-bottom: 0;
 }
-
-// .card-actions {
-//   padding: $card-spacer-y $card-spacer-x;
-
-//   .card-link + .card-link {
-//     margin-left: $card-spacer-x;
-//   }
-// }
 
 .card-link {
   &:hover {
@@ -278,7 +265,7 @@ $enable-rounded: true;
 
 
 .card img {
-  width: 325px;
+  width: 100%;
   height: 325px;
   object-fit: cover;
   border-radius: 1px;
