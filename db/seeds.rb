@@ -62,7 +62,7 @@ job = JobOffer.create!(
   event: 'UBM Asia Trade Show',
   city: 'Hong Kong',
   start_date: Date.new(2016, 9, 15),
-  end_date: Date.new(2017, 9, 19),
+  end_date: Date.new(2016, 9, 19),
   job_description: 'The Sales Representative will work closely with a broad range of internal stakeholders including Marketing, Sales, Sales Training and other key stakeholders within the organization. This role is based in Hong Kong, where you will be part of a dynamic organization within a fast-moving and rapidly growing area of our business. You must be a flexible, deadline-driven professional with the ability to juggle multiple projects simultaneously and drive daily project management. In return, we will offer you a creative and collaborative working environment with excellent benefits and competitive salary and benefits.',
   address: 'Hong Kong Convention and Exhibition Centre, 1 Expo Drive, Wan Chai, Hong Kong',
   wage: 15,
@@ -115,7 +115,7 @@ job = JobOffer.create!(
   event: 'JCK Las Vegas Show',
   city: 'Las Vegas',
   start_date: Date.new(2016, 6, 5),
-  end_date: Date.new(2017, 6, 8),
+  end_date: Date.new(2016, 6, 8),
   job_description: 'As a sales associate, you will do sales as well as networking with potential clients. During the tradeshow, you will target international B2B companies as well as national companies based in the US (mainly California, Arizona, North Carolina, Nevada, and New York). Patience, persuasiveness and attentiveness are a must for the position.',
   address: 'Mandalay Bay Resort & Casino, 3950 S Las Vegas Blvd, Las Vegas, NV 89119 USA',
   wage: 12,
@@ -169,7 +169,7 @@ employee_charles = Employee.create!(
   gender: 'M',
   location: 'Brussels',
   availability: 10,
-  photo: File.open(Rails.root.join("db/fixtures/images/suggested_charles.jpg"))
+  photo: File.open(Rails.root.join("db/fixtures/images/suggested_charles.JPG"))
 )
 
 employee_ecem = Employee.create!(
