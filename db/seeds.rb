@@ -102,7 +102,7 @@ job = JobOffer.create!(
   event: 'Arizona Jogs Gem and Jewelry Show',
   city: 'Tucson',
   start_date: Date.new(2016, 8, 8),
-  end_date: Date.new(2017, 9, 11),
+  end_date: Date.new(2016, 9, 11),
   job_description: '',
   address: 'Tucson Expo Center - 3750 E Irvington Rd, Tucson, Arizona 85714',
   wage: 15,
