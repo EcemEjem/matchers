@@ -1,63 +1,66 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'nyc_try.png' %>);">
+  <div class="banner-content">
 <h2 class="anchor text-center"> <%= @job.name %> </h2>
 <h4 class="text-center padding-bottom">You have <%= @job.job_applications.count %> applicants for this position</h4 >
-
+  </div>
+</div>
 
 <div class="wrapper-grey">
-  <div class="container anchor">
+  <div class="container">
     <div class="row">
       <div class="col-xs-12">
           <div class="box2">
             <div class="row">
               <div class="col-md-3">
-                <p>Event:</p>
+                <p class="label-job">Event:</p>
               </div>
               <div class="col-md-9">
-                <p><%= @job.event %></p>
+                <p class="data-job"><%= @job.event %></p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-md-3">
-                <p>Name:</p>
+                <p class="label-job">Name:</p>
               </div>
               <div class="col-md-9">
-                <p><%= @job.name %></p>
+                <p class="data-job"><%= @job.name %></p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-md-3">
-                <p>City:</p>
+                <p class="label-job">City:</p>
               </div>
               <div class="col-md-9">
-                <p><%= @job.city %></p>
+                <p class="data-job"><%= @job.city %></p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-md-3">
-                <p>Description :</p>
+                <p class="label-job">Description :</p>
               </div>
               <div class="col-md-9">
-                <p><%=@job.job_description%></p>
+                <p class="data-job"><%=@job.job_description%></p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-md-3">
-                <p>Duration:</p>
+                <p class="label-job">Duration:</p>
               </div>
               <div class="col-md-9">
-                <p><%=@job.start_date %> - <%= @job.end_date%> | <%=@job.duration%> days</p>
+                <p class="data-job"><%=@job.start_date %> - <%= @job.end_date%> | <%=@job.duration%> days</p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-md-3">
-                <p>Wage:</p>
+                <p class="label-job">Wage:</p>
               </div>
               <div class="col-md-9">
-                <p><%= @job.wage %> $</p>
+                <p class="data-job"><%= @job.wage %> $</p>
               </div>
             </div>
             <hr>
