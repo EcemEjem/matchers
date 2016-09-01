@@ -1,17 +1,26 @@
+
 <div class="container anchor">
   <div class="row">
-    <div class="col-xs-12">
-      <%= simple_form_for @profile, url: contractor_account_profile_path do |f| %>
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :age %>
-        <%= f.input :gender %>
+  <div class="col-xs-2">
+  <%= image_tag current_employee.photo, class: "avatar-large button-card" %>
+  </div>
+    <div class="col-xs-8">
+      <div class="edit-profile-card">
+  <h2>Edit your profile</h2>
+        <%= simple_form_for @profile, url: contractor_account_profile_path do |f| %>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :age %>
+          <%= f.input :gender %>
         <%= f.input :location %>
         <%= f.input :availability %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
-        <%= f.submit 'Update' %>
-      <% end %>
+          <%= f.submit 'Update', class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
+      <div class="col-xs-2">
+  </div>
   </div>
 </div>
