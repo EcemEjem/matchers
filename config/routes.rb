@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # is it companies and amployees or contractor and company
   devise_for :companies,  controllers: { registrations: 'company/registrations', sessions: 'company/sessions' }
-  devise_for :employees, controllers: { omniauth_callbacks: 'contractor/omniauth_callbacks' }
+  devise_for :employees, controllers: { omniauth_callbacks: 'contractor/omniauth_callbacks', sessions: 'contractor/sessions' }
   resources :contractors, only: [:show]
   root to: 'pages#home'
 

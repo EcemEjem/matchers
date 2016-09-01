@@ -29,7 +29,7 @@ class Company::Account::JobsController < Company::BaseController
      if @job.update(job_params)
       redirect_to company_account_root_path
     else
-      flash[:alert] = "Please fill all the required fields."
+      flash[:alert1] = "Please fill all the required fields."
       render :edit
     end
   end

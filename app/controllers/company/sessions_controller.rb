@@ -8,3 +8,4 @@ class Company::SessionsController < Devise::SessionsController
   # add path here for after company sign out
   #end
 end
+
