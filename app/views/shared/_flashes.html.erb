@@ -5,9 +5,9 @@
     </div>
   <% end %>
 
-  <% if flash[:alert] && params[:action] != "home" %>
+  <% if flash[:alert1] && params[:action] != "home" %>
     <div class="alert alert-error fade in">
       <button class="close" data-dismiss="alert">×</button>
-      <%= flash[:alert] %>
+      <%= flash[:alert1] %>
     </div>
   <% end %>
