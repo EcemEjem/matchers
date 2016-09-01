@@ -124,7 +124,7 @@ job = JobOffer.create!(
 )
 
 job = JobOffer.create!(
-  name: 'Translator - Cantonese',
+  name: 'Translator',
   event: 'Asia World Expo - HKTDC Hong Kong International Jewelry Show',
   city: 'Hong Kong',
   start_date: Date.new(2016, 9, 15),
