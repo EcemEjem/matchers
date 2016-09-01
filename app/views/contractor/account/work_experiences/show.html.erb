@@ -46,7 +46,10 @@
                 </tr>
                 <tr>
                   <td>Edit your profile:</td>
-                  <td><em><%= link_to 'Edit', edit_contractor_account_work_experience_path(@work_experience), class: "btn btn-secondary", id: "edit-button", style:"text-decoration:none" %></em></td>
+                    <td><%= link_to contractor_account_work_experiences_path do %><i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i>
+                    <% end %>
+                  <em><%= link_to 'Edit', edit_contractor_account_work_experience_path(@work_experience), class: "btn btn-secondary", id: "edit-button", style:"text-decoration:none" %></em>
+                  </td>
                 </tr>
               </tbody>
             </table>

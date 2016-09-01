@@ -66,9 +66,9 @@
             <hr>
             <div class="row">
               <p class="text-center">
-              <%= link_to 'Edit this job', edit_company_account_job_path, class: 'btn btn-success' %>
-              <%= link_to 'back', company_account_profile_path, class: 'btn btn-success' %>
-
+                <%= link_to company_account_profile_path, class: 'btn btn-success' do %><i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i>
+                <% end %>
+                <%= link_to 'Edit this job', edit_company_account_job_path, class: 'btn btn-success' %>
               </p>
             </div>
           </div>
