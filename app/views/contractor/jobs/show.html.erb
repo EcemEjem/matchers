@@ -10,9 +10,9 @@
       <% end %>
 
       <% else %>
-        <%= link_to "Apply now", new_contractor_job_job_application_path(@job), class: "btn btn-primary btn-lg" %>
+        <%= link_to "Apply now", new_contractor_job_job_application_path(@job), class: "btn btn-primary btn-lg apply-now" %>
     <% end %>
-      <p><em><%= link_to contractor_jobs_path, { location: ''} do %><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+      <p><em><%= link_to contractor_jobs_path, { location: ''} do %><i class="fa fa-arrow-left fa-2x back-arrow" aria-hidden="true"></i>
       <% end %></em></p>
   </div>
 </div>
