@@ -1,5 +1,5 @@
 class Employee < ApplicationRecord
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
 
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/

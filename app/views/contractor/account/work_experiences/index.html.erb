@@ -2,7 +2,7 @@
   <div class="row">
     <div class="jumbotron">
       <h1 class="display-3">Hello, <%= current_employee.first_name %></h1>
-      <p class="lead">Inspect your work-experiences</p>
+      <p class="lead">Your current and past work experience</p>
 
       <div class="application-status-actions">
         <p class="lead">
@@ -23,16 +23,16 @@
         </h4>
         <% end %>
         <p class="card-text">
-          company: <%= work_experience.company %>
+          <strong>Company:</strong> <%= work_experience.company %>
         </p>
         <p class="card-text">
-          <strong>duration:</strong> <%= work_experience.duration %> years
+          <strong>Industry:</strong> <%= work_experience.industry %>
         </p>
         <p class="card-text">
-         <strong>industry:</strong> <%= work_experience.industry %>
+         <strong>Duration:</strong> <%= work_experience.duration %> years
        </p>
        <p class="card-text">
-         <strong>description:</strong> <%= work_experience.description %>
+         <strong>Description:</strong> <%= work_experience.description %>
        </p>
 
      </div>

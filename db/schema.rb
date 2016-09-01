@@ -55,11 +55,11 @@ ActiveRecord::Schema.define(version: 20160825102629) do
     t.string   "gender"
     t.string   "location"
     t.integer  "availability"
+    t.string   "photo"
     t.string   "uid"
     t.string   "provider"
     t.string   "linkedin_photo_url"
     t.string   "headline"
-    t.string   "photo"
     t.index ["email"], name: "index_employees_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true, using: :btree
   end
@@ -88,9 +88,9 @@ ActiveRecord::Schema.define(version: 20160825102629) do
     t.date     "start_date"
     t.date     "end_date"
     t.string   "photo"
+    t.string   "event"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "event"
     t.index ["company_id"], name: "index_job_offers_on_company_id", using: :btree
   end
 
