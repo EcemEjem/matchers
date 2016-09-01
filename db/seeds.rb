@@ -141,21 +141,57 @@ employee_heyjude = Employee.create!(
   password: 123456,
   first_name: 'Hey',
   last_name: 'Jude',
-  age: 25,
+  age: 27,
   gender: 'F',
   location: 'Hong Kong',
   availability: 10,
   photo: File.open(Rails.root.join("db/fixtures/images/heyjude_avance.jpg"))
 )
 
+employee_margarita = Employee.create!(
+  email: 'margarita@gmail.com',
+  password: 123456,
+  first_name: 'Margarita',
+  last_name: 'Itaj',
+  age: 20,
+  gender: 'F',
+  location: 'Luxembourg',
+  availability: 10,
+  photo: File.open(Rails.root.join("db/fixtures/images/suggested_margarita.jpg"))
+)
+
+employee_charles = Employee.create!(
+  email: 'charles@gmail.com',
+  password: 123456,
+  first_name: 'Charles',
+  last_name: 'De Poortere',
+  age: 20,
+  gender: 'M',
+  location: 'Brussels',
+  availability: 10,
+  photo: File.open(Rails.root.join("db/fixtures/images/suggested_charles.jpg"))
+)
+
+employee_ecem = Employee.create!(
+  email: 'ecemerseker@gmail.com',
+  password: 123456,
+  first_name: 'Ecem',
+  last_name: 'Erseker',
+  age: 20,
+  gender: 'F',
+  location: 'Istanbul',
+  availability: 10,
+  photo: File.open(Rails.root.join("db/fixtures/images/suggested_ecem.jpg"))
+)
+
 work_experience = WorkExperience.create!(
   employee_id: employee_heyjude.id,
   industry:'Fashion',
-  experience: 3,
+  experience: 5,
   company:'Swarovski',
   title: 'Sales Associate',
   description: 'Increased sales by 20%.',
-  start_date: '2014-09-09',
+  start_date: '2013-09-09',
   end_date: '2016-09-09'
 )
 
@@ -166,29 +202,29 @@ work_experience = WorkExperience.create!(
   company:'Urban Co',
   title: 'Catalog Model',
   description: 'Modeled for different brand lines for catalog shoots.',
-  start_date: '2012-01-17',
+  start_date: '2013-01-17',
   end_date: '2016-01-20'
 )
 
 work_experience = WorkExperience.create!(
   employee_id: employee_heyjude.id,
   industry:'Translation and languages',
-  experience: 2,
+  experience: 4,
   company:'Independent',
   title: 'Translator',
   description: 'Independent, freelance translator of Cantonese to English for various businesses.',
-  start_date: '2015-01-17',
+  start_date: '2014-01-17',
   end_date: '2016-01-20'
 )
 
 work_experience = WorkExperience.create!(
   employee_id: employee_heyjude.id,
   industry:'Fashion',
-  experience: 3,
+  experience: 5,
   company:'Pandora',
   title: 'Sales Assistant',
   description: 'Assisted in B2B wholesale marketing and sales.',
-  start_date: '2012-09-09',
+  start_date: '2011-09-09',
   end_date: '2013-09-09'
 )
 
@@ -200,16 +236,16 @@ work_experience = WorkExperience.create!(
   title: 'Catalog Model',
   description: 'Catwalk model.',
   start_date: '2011-01-17',
-  end_date: '2012-01-20'
+  end_date: '2013-01-20'
 )
 
 work_experience = WorkExperience.create!(
   employee_id: employee_heyjude.id,
   industry:'Translation and languages',
-  experience: 2,
+  experience: 4,
   company:'Park & Choi Manufacturing',
   title: 'Translator',
   description: 'Independent, freelance translator.',
-  start_date: '2014-01-17',
-  end_date: '2015-01-20'
+  start_date: '2012-01-17',
+  end_date: '2014-01-20'
 )
