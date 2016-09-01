@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'nyc_try.png' %>);">
   <div class="banner-content">
-    <h2>Welcome <%= current_company.name %> to your company profile</h2>
+    <h2>Welcome to your company profile <%= current_company.name %></h2>
   </div>
 </div>
 
@@ -45,7 +45,7 @@
             <%= link_to "Add Job Offer",new_company_account_job_path, class: "btn btn-block btn-primary btn-lg  add-job-offer" %>
           </li>
           <li>
-            <%= link_to "See all offers", company_account_jobs_path, class: "btn btn-default  btn-primary btn-lg add-job-offer" %>
+            <%= link_to "See All Offers", company_account_jobs_path, class: "btn btn-default  btn-primary btn-lg add-job-offer" %>
 
           </li>
         </ul>
@@ -80,7 +80,7 @@
   <% unless @suggested_employees.empty? %>
     <div class="row ">
       <div class="bootstrap-demo">
-        <h3 class="text-center anchor">Suggested Employee for you <%= current_company.industry %></h3>
+        <h3 class="text-center anchor">Suggested Employees <%= current_company.industry %></h3>
           <% @suggested_employees.each do |suggested_employee| %>
             <div class="col-xs-12 col-sm-4">
               <div class="card card-smaller">

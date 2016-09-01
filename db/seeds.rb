@@ -13,11 +13,12 @@ JobOffer.destroy_all
 puts "Create company..."
 
 company_avance = Company.create!(
-  password: "avance_is_awesome",
-  name: "Avancé Accessories",
-  industry: "Fashion",
+  password: "avance",
+  name: "Avancé Accessories LLC",
+  industry: "Jewelry and accessories",
   email: "info@avanceaccessories.com",
-  description:"Unique designs, hand-crafted silver jewelry."
+  description:"B2B wholesale company focused on sterling silver jewelry and precious gem stones."
+  photo: File.open(Rails.root.join("db/fixtures/images/avance_mainpic2.jpg"))
 )
 
 company_swarovski = Company.create!(
@@ -64,14 +65,14 @@ puts "Create job offers..."
 
 job = JobOffer.create!(
   name: 'Sales Associate',
-  event: 'HKTDC Hong Kong International Jewelry Show',
+  event: 'Asia World Expo - HKTDC Hong Kong International Jewelry Show',
   city: 'Hong Kong',
-  start_date: Date.new(2016, 5, 3),
-  end_date: Date.new(2017, 9, 17),
+  start_date: Date.new(2016, 9, 15),
+  end_date: Date.new(2016, 9, 19),
   job_description: 'The Sales Associate will work closely with a broad range of internal stakeholders including Marketing, Sales, Sales Training and other key stakeholders within the organization.  This role is based in Hong Kong, where you will be part of a dynamic organization within a fast-moving and rapidly growing area of our business.
   You must be a flexible, deadline-driven professional with the ability to juggle multiple projects simultaneously and drive daily project management. In return, we will offer you a creative and collaborative working environment with excellent benefits and competitive salary and benefits.',
   address: 'Hong Kong Convention and Exhibition Centre, 1 Expo Drive, Wan Chai, Hong Kong',
-  wage: 20,
+  wage: 12,
   company: company_avance,
   photo: File.open(Rails.root.join("db/fixtures/images/01_job_offer.jpg"))
 )
