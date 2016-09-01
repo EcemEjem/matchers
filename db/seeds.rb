@@ -103,7 +103,7 @@ job = JobOffer.create!(
   city: 'Tucson',
   start_date: Date.new(2016, 8, 8),
   end_date: Date.new(2016, 9, 11),
-  job_description: '',
+  job_description: 'The model will showcase different lines of collections.',
   address: 'Tucson Expo Center - 3750 E Irvington Rd, Tucson, Arizona 85714',
   wage: 15,
   company: company_avance,
