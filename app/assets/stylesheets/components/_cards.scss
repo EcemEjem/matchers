@@ -101,7 +101,7 @@ $enable-rounded: true;
 .card {
   margin-top: 40px;
   width:325px;
-  height: 560px;
+  height: 590px;
   position: relative;
   display: block;
   margin-bottom: $card-spacer-y;
@@ -111,11 +111,13 @@ $enable-rounded: true;
   border-radius: 5px;
   //border: $card-border-width solid $card-border-color;
   position: relative;
+  transition: all 300ms ease;
   a {
     position: absolute;
     bottom: 15px;
     left: 15px;
   }
+
 }
 
 .card:hover {
