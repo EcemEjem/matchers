@@ -1,14 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#
-# movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-# puts "Cleaning database..."
 Company.destroy_all
 JobOffer.destroy_all
+WorkExperience.destroy_all
+Employee.destroy_all
 
 puts "Create company..."
 
@@ -17,7 +10,7 @@ company_avance = Company.create!(
   name: "Avancé Accessories LLC",
   industry: "Jewelry and accessories",
   email: "info@avanceaccessories.com",
-  description:"B2B wholesale company focused on sterling silver jewelry and precious gem stones."
+  description:"B2B wholesale company focused on sterling silver jewelry and precious gem stones.",
   photo: File.open(Rails.root.join("db/fixtures/images/avance_mainpic2.jpg"))
 )
 
@@ -101,7 +94,7 @@ job = JobOffer.create!(
   address: 'Javits Center  655 W 34th St, New York, NY 10001 USA',
   wage: 17,
   company: company_avance,
-  photo: File.open(Rails.root.join("db/fixtures/images/accessories_nyc_show_copy.jpg"))
+  photo: File.open(Rails.root.join("db/fixtures/images/accessories_nyc_show_model.jpg"))
 )
 
 job = JobOffer.create!(
@@ -142,4 +135,28 @@ job = JobOffer.create!(
   company: company_avance,
   photo: File.open(Rails.root.join("db/fixtures/images/HK_convention_copy.jpg"))
 )
+
+employee_heyjude = Employee.create!(
+  email: 'hey@jude.com',
+  password: 123456,
+  first_name: 'Hey',
+  last_name: 'Jude',
+  age: 25,
+  gender: 'F',
+  location: 'Hong Kong',
+  availability: 10,
+  photo: File.open(Rails.root.join("db/fixtures/images/heyjude_avance.jpg"))
+)
+
+work_experience = WorkExperience.create!(
+  employee_id: employee_heyjude.id,
+  industry: 'Sales',
+  experience: 3,
+  company: 'Swarovski',
+  title: 'Sales Associate',
+  description: 'Increased sales by 20%.',
+  start_date: '2013-09-09',
+  end_date: '2016-09-09'
+)
+
 
