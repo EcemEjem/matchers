@@ -64,45 +64,44 @@ company_amoy = Company.create!(
 puts "Create job offers..."
 
 job = JobOffer.create!(
-  name: 'Sales Associate',
-  event: 'The 20th China (Shanghai) International Nutrition and Health Industry Expo',
-  city: 'Shanghai',
+
+  name: 'Sales Representative',
+  event: 'UBM Asia Trade Show',
+  city: 'Hong Kong',
   start_date: Date.new(2016, 9, 15),
-  end_date: Date.new(2016, 9, 19),
-  job_description: 'The Sales Associate will work closely with a broad range of internal stakeholders including Marketing, Sales, Sales Training and other key stakeholders within the organization.  This role is based in Hong Kong, where you will be part of a dynamic organization within a fast-moving and rapidly growing area of our business.
-  You must be a flexible, deadline-driven professional with the ability to juggle multiple projects simultaneously and drive daily project management. In return, we will offer you a creative and collaborative working environment with excellent benefits and competitive salary and benefits.',
+  end_date: Date.new(2017, 9, 19),
+  job_description: 'The Sales Representative will work closely with a broad range of internal stakeholders including Marketing, Sales, Sales Training and other key stakeholders within the organization. This role is based in Hong Kong, where you will be part of a dynamic organization within a fast-moving and rapidly growing area of our business. You must be a flexible, deadline-driven professional with the ability to juggle multiple projects simultaneously and drive daily project management. In return, we will offer you a creative and collaborative working environment with excellent benefits and competitive salary and benefits.',
   address: 'Hong Kong Convention and Exhibition Centre, 1 Expo Drive, Wan Chai, Hong Kong',
-  wage: 12,
-  company: company_avance,
-  photo: File.open(Rails.root.join("db/fixtures/images/01_job_offer.jpg"))
-)
-
-job = JobOffer.create!(
-
-  name: 'Electrician & Booth builder',
-  event: 'Arizona Jogs Gem and Jewelry Show',
-  city: 'Tucson',
-  start_date: Date.new(2016, 10, 3),
-  end_date: Date.new(2017, 3, 10),
-  job_description: 'The Electrician & Booth builder is responsible for achieving sales objectives and growing sales volume for Essilor premium branded products in assigned accounts within an assigned geographic territory. They are also responsible for acquisition and growth of their independent ECP’s business and loyalty through the positioning and delivery of Essilor’s branded products, marketing strategies, consumer initiatives, service excellence and technical superiority.',
-  address: 'Tucson Expo Center - 3750 E Irvington Rd, Tucson, Arizona 85714',
-  wage: 25,
-  company: company_avance,
-  photo: File.open(Rails.root.join("db/fixtures/images/02_job_offer.jpg"))
-)
-
-job = JobOffer.create!(
-
-  name: 'Sales Associate',
-  event: 'Shot Show',
-  city: 'Las Vegas',
-  start_date: Date.new(2016, 5, 3),
-  end_date: Date.new(2017, 9, 17),
-  job_description: 'We are looking for a results driven retail Sales Associate to be responsible for all sales activities and sales associate job duties, from lead generation through to close. The successful candidate will be able to elevate company standards, achieve sales goals and meet clients expectations.',
-  address: 'Sands Expo Center Las Vegas, The Grand Canal Shoppes, 201 Sands Ave, Las Vegas, NV 89169',
   wage: 15,
   company: company_avance,
-  photo: File.open(Rails.root.join("db/fixtures/images/03_job_offer.jpg"))
+  photo: File.open(Rails.root.join("db/fixtures/images/HK_harbour_copy.jpg"))
+)
+
+job = JobOffer.create!(
+
+  name: 'Electrician',
+  event: 'Fixtures Fine Mineral Wholesale Show',
+  city: 'Tucson',
+  start_date: Date.new(2017, 12, 5),
+  end_date: Date.new(2017, 12, 9),
+  job_description: 'The electrician will build the electricity network of the trade show booths before the show. S/he will be responsible for disassembling the electricity and booth lights post-show.',
+  address: '500 W Grant Road Tucson, AZ 85705 United States',
+  wage: 25,
+  company: company_avance,
+  photo: File.open(Rails.root.join("db/fixtures/images/hk_goodpics_copy.jpg"))
+)
+
+job = JobOffer.create!(
+  name: 'Sales Associates',
+  event: 'Accessories the Show',
+  city: 'New York',
+  start_date: Date.new(2016, 10, 3),
+  end_date: Date.new(2016, 10, 10),
+  job_description: 'We are looking for a results driven wholesale Sales Associate to be responsible for all sales activities and sales associate job duties, from lead generation through to close. The successful candidate will be able to achieve sales goals set for the trade show and meet clients expectations.',
+  address: 'Javits Center  655 W 34th St, New York, NY 10001 USA',
+  wage: 17,
+  company: company_avance,
+  photo: File.open(Rails.root.join("db/fixtures/images/accessories_nyc_show_copy.jpg"))
 )
 
 job = JobOffer.create!(
@@ -128,7 +127,7 @@ job = JobOffer.create!(
   address: 'Mandalay Bay Resort & Casino, 3950 S Las Vegas Blvd, Las Vegas, NV 89119 USA',
   wage: 12,
   company: company_avance,
-  photo: File.open(Rails.root.join("db/fixtures/images/avance_tradeshow1.jpg"))
+  photo: File.open(Rails.root.join("db/fixtures/images/las_vegas_copy.jpg"))
 )
 
 job = JobOffer.create!(
@@ -141,6 +140,6 @@ job = JobOffer.create!(
   address: 'Hong Kong Convention and Exhibition Centre 1 Expo Drive, Wan Chai, Hong Kong',
   wage: 20,
   company: company_avance,
-  photo: File.open(Rails.root.join("db/fixtures/images/hk_trade_kullanilabilir_insangiriste.jpg"))
+  photo: File.open(Rails.root.join("db/fixtures/images/HK_convention_copy.jpg"))
 )
 
