@@ -57,7 +57,8 @@ function scaleBannerVideoSize(element){
             $(this).width(videoWidth).height(videoHeight);
         }
 
-        $('.m-video .video-container video').addClass('fadeIn animated');
+        // fadein video annimation
+        // $('.m-video .video-container video').addClass('fadeIn animated');
 
     });
 }

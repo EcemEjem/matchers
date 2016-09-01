@@ -2,12 +2,24 @@
   color: white;
   text-align: center;
   height: 50vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */ 
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
 }
+
+.label-job {
+      font-weight: 700;
+    font-size: 16pt;
+}
+
+.data-job {
+      font-size: 14pt;
+
+}
+
 .banner h2 {
   font-size: 30px;
   font-weight: bold;
@@ -16,10 +28,13 @@
 
 .wrapper-grey {
   background: #EDEFF0;
-  // padding-top: 10px; 
+  // padding-top: 10px;
   padding-bottom: 60px;
 }
 
+.apply-now{
+  margin: 20px;
+}
 
 .box p {
   text-align: justify;

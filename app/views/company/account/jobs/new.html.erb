@@ -12,19 +12,19 @@
     <div class="row">
 
       <div class="col-xs-12">
-        <div class="box2">
+        <div class="edit-profile-card">
           <%= simple_form_for @job, url: company_account_jobs_path, class:"panel panel-default" do |f| %>
             <%= f.input :name %>
             <%= f.input :event %>
             <%= f.input :city %>
             <%= f.input :job_description %>
             <%= f.input :address %>
-            <%= f.input :wage %>
+            <%= f.input :wage%>
             <%= f.input :start_date %>
             <%= f.input :end_date %>
              <%= f.input :photo %>
             <%= f.input :photo_cache, as: :hidden %>
-            <%= f.submit 'Create Job Offer' %>
+            <%= f.submit 'Create Job Offer', class:"btn btn-primary" %>
           <% end %>
         </div>     
       </div>

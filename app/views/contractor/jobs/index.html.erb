@@ -1,9 +1,11 @@
 <h2 class="anchor text-center">Job Opportunities</h2>
-<% if params[:location].empty?%>
-  <h4 class="text-center padding-bottom"> All Locations and Dates </h4>
-<% else %>
+<% if params[:location].present?%>
   <h4 class="text-center padding-bottom"><%= params[:location] %></h4>
+<% else %>
+  <h4 class="text-center padding-bottom"> All Locations and Dates </h4>
 <% end %>
+<p class="text-center"><em><%= link_to contractor_root_path do %><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+      <% end %></em></p>
 
 <div class="container">
   <div class="margin_top_40">
