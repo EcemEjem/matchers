@@ -144,7 +144,9 @@
                     <span><%= job_application.employee.work_experiences.last.experience %> years</span>
                   <% end  %>
                 </div>
-                <%= link_to 'See profile', company_account_job_application_path(job_application), class: 'btn btn-primary' %>
+                <div class="card-block">
+                  <%= link_to 'See profile', company_account_job_application_path(job_application), class: 'btn btn-primary' %>
+                </div>
               </div>
               </div>
           </div>
