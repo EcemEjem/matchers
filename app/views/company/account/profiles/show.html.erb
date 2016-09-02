@@ -61,7 +61,6 @@
         <div class="card">
           <%= job_offer.photo.present? ? cl_image_tag(job_offer.photo, class:"card-img-top", height: 194, width: 323, crop: :fill) : image_tag('01_city.jpg') %>
           <div class="card-block">
-            <%= link_to "See Applicants", company_account_job_path(job_offer), class: "card-link btn btn-primary btn-padding"%>
 
             <h4 class="card-title">Position: <%= job_offer.name %></h4>
             <p class="card-text">City: <%= job_offer.city %></p>
@@ -69,6 +68,7 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><%= unread_job_offer_applications_count(job_offer) %> New Applicants</li>
             <li class="list-group-item"><%= job_offer.job_applications.count %> Applicants</li>
+            <%= link_to "See Applicants", company_account_job_path(job_offer), class: "card-link btn btn-primary btn-padding"%>
           </ul>
         </div>
       </div>

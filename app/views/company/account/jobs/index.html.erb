@@ -12,15 +12,15 @@
             <div class="card">
               <%= job.photo.present? ? cl_image_tag(job.photo, class:"card-img-top", height: 194, width: 323, crop: :fill) : image_tag('01_city.jpg') %>
               <div class="card-block">
-                <%= link_to "See Applicants", company_account_job_path(job), class: "card-link"%>
-              </div>
-              <div class="card-block">
                 <h4 class="card-title">Position: <%= job.name %></h4>
                 <p class="card-text">City: <%= job.city %></p>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item"><%= job.job_applications.count %> Applicants</li>
               </ul>
+              <div class="card-block">
+                <%= link_to "See Applicants", company_account_job_path(job), class: "card-link btn btn-primary"%>
+              </div>
             </div>
           </div>
         <% end %>
