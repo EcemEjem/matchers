@@ -53,13 +53,13 @@
     </div>
   </div>
 
-  <!---------- ------- job offers cards -------------------->
+  <!-- job offers cards -->
   <div class="row">
     <div class="bootstrap-demo">
       <%  @job_offers.each do |job_offer| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card">
-          <%= job_offer.photo.present? ? cl_image_tag(job_offer.photo, class:"card-img-top", height: 194, width: 323, crop: :fill) : image_tag('01_city.jpg') %>
+          <%= job_offer.photo.present? ? cl_image_tag(job_offer.photo, class:"card-img-top", height: 494, width: 623, crop: :fill) : image_tag('01_city.jpg') %>
           <div class="card-block">
 
             <h4 class="card-title">Position: <%= job_offer.name %></h4>
@@ -68,19 +68,21 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><%= unread_job_offer_applications_count(job_offer) %> New Applicants</li>
             <li class="list-group-item"><%= job_offer.job_applications.count %> Applicants</li>
-            <%= link_to "See Applicants", company_account_job_path(job_offer), class: "card-link btn btn-primary btn-padding"%>
           </ul>
+          <%= link_to "See Applicants", company_account_job_path(job_offer), class: "card-link btn btn-primary btn-padding"%>
         </div>
       </div>
       <% end %>
     </div>
   </div>
 
-  <!---------- suggested_employee--------------  ---------->
+  <!-- suggested_employee -->
   <% unless @suggested_employees.empty? %>
     <div class="row ">
       <div class="bootstrap-demo">
-        <h3 class="text-center anchor">Suggested Employees <%= current_company.industry %></h3>
+        <h3 class="text-center anchor">
+          Suggested Employees
+        </h3>
           <% @suggested_employees.each do |suggested_employee| %>
             <div class="col-xs-12 col-sm-4">
               <div class="card card-smaller">
@@ -94,7 +96,7 @@
                     Name: <%= suggested_employee.first_name %>
                   </div>
                   <h4 class="card-text">
-                    Industry: <%= @industry[0] %>
+                    Industry: <%= current_company.industry %>
                    </h4>
                    <p>
                     <%#= link_to 'See profile', company_account_job_applications_path(job_applications), class: 'btn btn-primary' %>
