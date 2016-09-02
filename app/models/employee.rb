@@ -9,9 +9,9 @@ class Employee < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
-  has_many :job_applications
+  has_many :job_applications, dependent: :destroy
   has_many :job_offers, through: :job_applications
-  has_many :work_experiences
+  has_many :work_experiences, dependent: :destroy
 
   validates :first_name,     presence: true, on: :update
   validates :last_name,      presence: true, on: :update

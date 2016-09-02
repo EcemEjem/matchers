@@ -69,6 +69,7 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><%= unread_job_offer_applications_count(job_offer) %> New Applicants</li>
             <li class="list-group-item"><%= job_offer.job_applications.count %> Applicants</li>
+            <li class="list-group-item"><%= link_to "Look at this job!", company_account_job_path(job_offer), class:"btn btn-primary"  %></li>
           </ul>
         </div>
       </div>
