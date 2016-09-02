@@ -1,31 +1,35 @@
-
-<div class="main-header text-center">
-  <h1>MATCHER</h1>
-</div>
-<div class="main-text text-center">
-  <div class="anything_but_bootstrap">
-  <h3>
-    Find your short-term employees anywhere, anytime.
-  </h3>
-    <p>
-    You are a B2B company.
-
-    You attend trade shows, conferences and temporary events all over the world.
-
-    You need local, short-term employees from sales personnel, translators to assistants to set up your booth and electricity.
-
-    Matcher provides you with immediate assistance.
-    </p>
+<div class="row">
+  <div class="col-sm-6 text-right">
+    <div class="main-header">
+      <h1>MATCHER</h1>
+    </div>
+    <div class="main-text">
+      <%= link_to new_company_registration_path, class: 'ui inverted button' do %>
+        Find your employees now
+      <% end %>
+    </div>
   </div>
-  <%= link_to new_company_registration_path do %>
-  <div class="button-company">
-    <p>
-      Find your <br>
-      employees now
-    </p>
+  <div class="col-sm-6">
+    <div class="awesome-david-wizard">
+      <div class="text-left">
+        <div class="card-block">
+          <h3 class="card-title">
+            Find your short-term <strong>employees anywhere</strong>, <strong>anytime</strong>.
+          </h3>
+          <hr>
+          <p>
+            You are a B2B company. You attend trade shows, conferences and temporary events all over the world.<br>
+          </p>
+          <p>
+            You need <strong>local</strong>, <strong>short-term employees</strong> from sales personnel,<br> translators to assistants to set up your booth and electricity.<br>
+          </p>
+          <p>
+            MATCHER provides you with <strong>immediate assistance</strong>.<br>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-  <% end %>
 </div>
-
 
 <div class="banner-company"></div>

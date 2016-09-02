@@ -53,7 +53,7 @@
     </div>
   </div>
 
-  <!---------- ------- job offers cards -------------------->
+  <!-- job offers cards -->
   <div class="row">
     <div class="bootstrap-demo">
       <%  @job_offers.each do |job_offer| %>
@@ -68,15 +68,15 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><%= unread_job_offer_applications_count(job_offer) %> New Applicants</li>
             <li class="list-group-item"><%= job_offer.job_applications.count %> Applicants</li>
-            <%= link_to "See Applicants", company_account_job_path(job_offer), class: "card-link btn btn-primary btn-padding"%>
           </ul>
+          <%= link_to "See Applicants", company_account_job_path(job_offer), class: "card-link btn btn-primary btn-padding"%>
         </div>
       </div>
       <% end %>
     </div>
   </div>
 
-  <!---------- suggested_employee--------------  ---------->
+  <!-- suggested_employee -->
   <% unless @suggested_employees.empty? %>
     <div class="row ">
       <div class="bootstrap-demo">
