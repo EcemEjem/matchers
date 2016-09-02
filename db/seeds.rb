@@ -139,8 +139,8 @@ job = JobOffer.create!(
 employee_heyjude = Employee.create!(
   email: 'hey@jude.com',
   password: 123456,
-  first_name: 'Hey',
-  last_name: 'Jude',
+  first_name: 'Jude',
+  last_name: 'Hey',
   age: 27,
   gender: 'F',
   location: 'Hong Kong',

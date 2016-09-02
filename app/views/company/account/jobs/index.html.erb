@@ -10,7 +10,7 @@
         <%  @jobs.each do |job| %>
           <div class="col-xs-12 col-sm-4">
             <div class="card">
-              <%= job.photo.present? ? cl_image_tag(job.photo, class:"card-img-top", height: 194, width: 323, crop: :fill) : image_tag('01_city.jpg') %>
+              <%= job.photo.present? ? cl_image_tag(job.photo, class:"card-img-top", height: 494, width: 623, crop: :fill) : image_tag('01_city.jpg') %>
               <div class="card-block">
                 <h4 class="card-title">Position: <%= job.name %></h4>
                 <p class="card-text">City: <%= job.city %></p>
